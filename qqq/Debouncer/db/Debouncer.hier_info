@@ -1,0 +1,280 @@
+|Debouncer
+X => D_FF:dff0.D
+CLK => Divider:divider1.CLK
+reset => Divider:divider1.reset
+reset => nq0.IN1
+reset => nq1.IN1
+reset => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1
+CLK => Dividebytwo:divideby2_1.CLK
+reset => Dividebytwo:divideby2_1.reset
+reset => Dividebytwo:divideby2_2.reset
+reset => Dividebytwo:divideby_2_3.reset
+reset => Dividebytwo:divideby_2_4.reset
+reset => Dividebytwo:divideby_2_5.reset
+reset => Dividebytwo:divideby_2_6.reset
+reset => Dividebytwo:divideby_2_7.reset
+reset => Dividebytwo:divideby_2_8.reset
+reset => Dividebytwo:divideby_2_9.reset
+reset => Dividebytwo:divideby_2_10.reset
+reset => Dividebytwo:divideby_2_11.reset
+reset => Dividebytwo:divideby_2_12.reset
+reset => Dividebytwo:divideby_2_13.reset
+reset => Dividebytwo:divideby_2_14.reset
+reset => Dividebytwo:divideby_2_15.reset
+reset => Dividebytwo:divideby_2_16.reset
+reset => Dividebytwo:divideby_2_17.reset
+reset => Dividebytwo:divideby_2_18.reset
+reset => Dividebytwo:divideby_2_19.reset
+Q <= Dividebytwo:divideby_2_19.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby2_1
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby2_1|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby2_2
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby2_2|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_3
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_3|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_4
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_4|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_5
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_5|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_6
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_6|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_7
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_7|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_8
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_8|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_9
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_9|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_10
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_10|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_11
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_11|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_12
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_12|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_13
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_13|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_14
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_14|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_15
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_15|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_16
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_16|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_17
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_17|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_18
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_18|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_19
+CLK => D_FF:dff1.CLK
+reset => temp.IN1
+Q <= D_FF:dff1.Q
+
+
+|Debouncer|Divider:divider1|Dividebytwo:divideby_2_19|D_FF:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|D_FF:dff0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|D_FF:dff
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Debouncer|D_FF:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,696 @@
+Analysis & Synthesis report for stringRecognizer
+Fri Mar  9 21:29:38 2018
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|Scan_Chain:scan_instance|current_state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance
+ 12. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg
+ 13. Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+ 14. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2"
+ 15. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1"
+ 16. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset1"
+ 17. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset0"
+ 18. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3"
+ 19. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2"
+ 20. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1"
+ 21. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset2"
+ 22. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset1"
+ 23. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset0"
+ 24. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4"
+ 25. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2"
+ 26. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1"
+ 27. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset2"
+ 28. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset1"
+ 29. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset0"
+ 30. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2"
+ 31. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1"
+ 32. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset1"
+ 33. Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset0"
+ 34. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"
+ 35. Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg"
+ 36. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-----------------------------+--------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Fri Mar  9 21:29:38 2018      ;
+; Quartus II 64-Bit Version   ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name               ; stringRecognizer                           ;
+; Top-level Entity Name       ; TopLevel                                   ;
+; Family                      ; MAX V                                      ;
+; Total logic elements        ; 76                                         ;
+; Total pins                  ; 5                                          ;
+; Total virtual pins          ; 0                                          ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
++-----------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; TopLevel           ; stringRecognizer   ;
+; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; scan_chain.vhdl                  ; yes             ; User VHDL File  ; /home/student/devesh/string_new/scan_chain.vhdl      ;         ;
+; scan_reg.vhdl                    ; yes             ; User VHDL File  ; /home/student/devesh/string_new/scan_reg.vhdl        ;         ;
+; TopLevel.vhdl                    ; yes             ; User VHDL File  ; /home/student/devesh/string_new/TopLevel.vhdl        ;         ;
+; terror.vhd                       ; yes             ; User VHDL File  ; /home/student/devesh/string_new/terror.vhd           ;         ;
+; stringRecognizer.vhd             ; yes             ; User VHDL File  ; /home/student/devesh/string_new/stringRecognizer.vhd ;         ;
+; MUX.vhd                          ; yes             ; User VHDL File  ; /home/student/devesh/string_new/MUX.vhd              ;         ;
+; KNIFE.vhd                        ; yes             ; User VHDL File  ; /home/student/devesh/string_new/KNIFE.vhd            ;         ;
+; GUN.vhd                          ; yes             ; User VHDL File  ; /home/student/devesh/string_new/GUN.vhd              ;         ;
+; DUT.vhd                          ; yes             ; User VHDL File  ; /home/student/devesh/string_new/DUT.vhd              ;         ;
+; D_FF.vhd                         ; yes             ; User VHDL File  ; /home/student/devesh/string_new/D_FF.vhd             ;         ;
+; comparator.vhd                   ; yes             ; User VHDL File  ; /home/student/devesh/string_new/comparator.vhd       ;         ;
+; bomb.vhd                         ; yes             ; User VHDL File  ; /home/student/devesh/string_new/bomb.vhd             ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 76    ;
+;     -- Combinational with no register       ; 46    ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 30    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 39    ;
+;     -- 3 input functions                    ; 15    ;
+;     -- 2 input functions                    ; 22    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 76    ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 1     ;
+;     -- asynchronous clear/load mode         ; 5     ;
+;                                             ;       ;
+; Total registers                             ; 30    ;
+; I/O pins                                    ; 5     ;
+; Maximum fan-out node                        ; TRST  ;
+; Maximum fan-out                             ; 37    ;
+; Total fan-out                               ; 295   ;
+; Average fan-out                             ; 3.64  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                  ; Library Name ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------+--------------+
+; |TopLevel                       ; 76 (0)      ; 30           ; 0          ; 5    ; 0            ; 46 (0)       ; 0 (0)             ; 30 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel                                                            ; work         ;
+;    |DUT:dut2|                   ; 38 (0)      ; 10           ; 0          ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2                                                   ; work         ;
+;       |stringRecognizer:dut|    ; 38 (0)      ; 10           ; 0          ; 0    ; 0            ; 28 (0)       ; 0 (0)             ; 10 (0)           ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut                              ; work         ;
+;          |BOMB:aa|              ; 6 (0)       ; 2            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa                      ; work         ;
+;             |D_FF:filp0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|D_FF:filp0           ; work         ;
+;             |D_FF:filp1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|D_FF:filp1           ; work         ;
+;             |MUX:mux_3|         ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3            ; work         ;
+;                |MUX_bit:X2|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X2 ; work         ;
+;                |MUX_bit:X4|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X4 ; work         ;
+;             |comparator:comp|   ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|comparator:comp      ; work         ;
+;          |GUN:G|                ; 7 (0)       ; 2            ; 0          ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G                        ; work         ;
+;             |D_FF:filp0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|D_FF:filp0             ; work         ;
+;             |D_FF:filp1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|D_FF:filp1             ; work         ;
+;             |MUX:mux_2|         ; 1 (0)       ; 0            ; 0          ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2              ; work         ;
+;                |MUX_bit:X1|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X1   ; work         ;
+;             |MUX_bit:reset1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset1         ; work         ;
+;             |comparator:com|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|comparator:com         ; work         ;
+;          |KNIFE:K|              ; 12 (0)      ; 3            ; 0          ; 0    ; 0            ; 9 (0)        ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K                      ; work         ;
+;             |D_FF:filp0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp0           ; work         ;
+;             |D_FF:filp1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp1           ; work         ;
+;             |D_FF:filp2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp2           ; work         ;
+;             |MUX:mux_4|         ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4            ; work         ;
+;                |MUX_bit:X2|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X2 ; work         ;
+;                |MUX_bit:X3|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X3 ; work         ;
+;             |MUX_bit:reset0|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset0       ; work         ;
+;             |MUX_bit:reset1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset1       ; work         ;
+;             |MUX_bit:reset2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset2       ; work         ;
+;             |comparator:com|    ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|comparator:com       ; work         ;
+;          |TERROR:T|             ; 13 (0)      ; 3            ; 0          ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 3 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T                     ; work         ;
+;             |D_FF:filp0|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp0          ; work         ;
+;             |D_FF:filp1|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp1          ; work         ;
+;             |D_FF:filp2|        ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp2          ; work         ;
+;             |MUX_bit:m3|        ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:m3          ; work         ;
+;             |MUX_bit:reset0|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset0      ; work         ;
+;             |MUX_bit:reset1|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset1      ; work         ;
+;             |MUX_bit:reset2|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset2      ; work         ;
+;             |comparator:comp_1| ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|comparator:comp_1   ; work         ;
+;    |Scan_Chain:scan_instance|   ; 38 (7)      ; 20           ; 0          ; 0    ; 0            ; 18 (2)       ; 0 (0)             ; 20 (5)           ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance                                   ; work         ;
+;       |Scan_Reg:In_Reg|         ; 23 (23)     ; 14           ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg                   ; work         ;
+;       |Scan_Reg:Out_Reg|        ; 8 (8)       ; 1            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg                  ; work         ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|Scan_Chain:scan_instance|current_state                                                                               ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; Name                    ; current_state.s_update ; current_state.s_shift ; current_state.s_capture ; current_state.s_DR ; current_state.s_idle ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+; current_state.s_idle    ; 0                      ; 0                     ; 0                       ; 0                  ; 0                    ;
+; current_state.s_DR      ; 0                      ; 0                     ; 0                       ; 1                  ; 1                    ;
+; current_state.s_capture ; 0                      ; 0                     ; 1                       ; 0                  ; 1                    ;
+; current_state.s_shift   ; 0                      ; 1                     ; 0                       ; 0                  ; 1                    ;
+; current_state.s_update  ; 1                      ; 0                     ; 0                       ; 0                  ; 1                    ;
++-------------------------+------------------------+-----------------------+-------------------------+--------------------+----------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L2[0] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg|L1[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; in_pins        ; 7     ; Signed Integer                               ;
+; out_pins       ; 1     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:In_Reg ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; length         ; 7     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Scan_Chain:scan_instance|Scan_Reg:Out_Reg ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; length         ; 1     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                    ;
+; d1   ; Input ; Info     ; Stuck at VCC                                    ;
+; d2   ; Input ; Info     ; Stuck at VCC                                    ;
+; d3   ; Input ; Info     ; Stuck at VCC                                    ;
+; d4   ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at VCC                                    ;
+; d1   ; Input ; Info     ; Stuck at GND                                    ;
+; d2   ; Input ; Info     ; Stuck at VCC                                    ;
+; d3   ; Input ; Info     ; Stuck at GND                                    ;
+; d4   ; Input ; Info     ; Stuck at VCC                                    ;
+; f0   ; Input ; Info     ; Stuck at GND                                    ;
+; f1   ; Input ; Info     ; Stuck at GND                                    ;
+; f2   ; Input ; Info     ; Stuck at VCC                                    ;
+; f3   ; Input ; Info     ; Stuck at VCC                                    ;
+; f4   ; Input ; Info     ; Stuck at VCC                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset1" ;
++------+-------+----------+------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                              ;
++------+-------+----------+------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                         ;
++------+-------+----------+------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset0" ;
++------+-------+----------+------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                              ;
++------+-------+----------+------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                         ;
++------+-------+----------+------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at VCC                                       ;
+; d1   ; Input ; Info     ; Stuck at GND                                       ;
+; d2   ; Input ; Info     ; Stuck at GND                                       ;
+; d3   ; Input ; Info     ; Stuck at VCC                                       ;
+; d4   ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at VCC                                       ;
+; d1   ; Input ; Info     ; Stuck at GND                                       ;
+; d2   ; Input ; Info     ; Stuck at GND                                       ;
+; d3   ; Input ; Info     ; Stuck at VCC                                       ;
+; d4   ; Input ; Info     ; Stuck at GND                                       ;
+; f0   ; Input ; Info     ; Stuck at GND                                       ;
+; f1   ; Input ; Info     ; Stuck at VCC                                       ;
+; f2   ; Input ; Info     ; Stuck at VCC                                       ;
+; f3   ; Input ; Info     ; Stuck at VCC                                       ;
+; f4   ; Input ; Info     ; Stuck at VCC                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1" ;
++------+-------+----------+----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                            ;
++------+-------+----------+----------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                       ;
+; d1   ; Input ; Info     ; Stuck at GND                                       ;
+; d2   ; Input ; Info     ; Stuck at VCC                                       ;
+; d3   ; Input ; Info     ; Stuck at GND                                       ;
+; d4   ; Input ; Info     ; Stuck at VCC                                       ;
+; f0   ; Input ; Info     ; Stuck at VCC                                       ;
+; f1   ; Input ; Info     ; Stuck at GND                                       ;
+; f2   ; Input ; Info     ; Stuck at VCC                                       ;
+; f3   ; Input ; Info     ; Stuck at GND                                       ;
+; f4   ; Input ; Info     ; Stuck at GND                                       ;
++------+-------+----------+----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset2" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset1" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset0" ;
++------+-------+----------+---------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                 ;
++------+-------+----------+---------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                            ;
++------+-------+----------+---------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                      ;
+; d1   ; Input ; Info     ; Stuck at GND                                      ;
+; d2   ; Input ; Info     ; Stuck at VCC                                      ;
+; d3   ; Input ; Info     ; Stuck at GND                                      ;
+; d4   ; Input ; Info     ; Stuck at VCC                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                      ;
+; d1   ; Input ; Info     ; Stuck at GND                                      ;
+; d2   ; Input ; Info     ; Stuck at VCC                                      ;
+; d3   ; Input ; Info     ; Stuck at VCC                                      ;
+; d4   ; Input ; Info     ; Stuck at GND                                      ;
+; f0   ; Input ; Info     ; Stuck at GND                                      ;
+; f1   ; Input ; Info     ; Stuck at VCC                                      ;
+; f2   ; Input ; Info     ; Stuck at GND                                      ;
+; f3   ; Input ; Info     ; Stuck at GND                                      ;
+; f4   ; Input ; Info     ; Stuck at VCC                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                      ;
+; d1   ; Input ; Info     ; Stuck at VCC                                      ;
+; d2   ; Input ; Info     ; Stuck at VCC                                      ;
+; d3   ; Input ; Info     ; Stuck at VCC                                      ;
+; d4   ; Input ; Info     ; Stuck at GND                                      ;
+; f0   ; Input ; Info     ; Stuck at GND                                      ;
+; f1   ; Input ; Info     ; Stuck at VCC                                      ;
+; f2   ; Input ; Info     ; Stuck at GND                                      ;
+; f3   ; Input ; Info     ; Stuck at VCC                                      ;
+; f4   ; Input ; Info     ; Stuck at VCC                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset2" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset1" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset0" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                      ;
+; d1   ; Input ; Info     ; Stuck at GND                                      ;
+; d2   ; Input ; Info     ; Stuck at GND                                      ;
+; d3   ; Input ; Info     ; Stuck at VCC                                      ;
+; d4   ; Input ; Info     ; Stuck at GND                                      ;
+; f0   ; Input ; Info     ; Stuck at GND                                      ;
+; f1   ; Input ; Info     ; Stuck at VCC                                      ;
+; f2   ; Input ; Info     ; Stuck at VCC                                      ;
+; f3   ; Input ; Info     ; Stuck at GND                                      ;
+; f4   ; Input ; Info     ; Stuck at VCC                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; d0   ; Input ; Info     ; Stuck at GND                                      ;
+; d1   ; Input ; Info     ; Stuck at VCC                                      ;
+; d2   ; Input ; Info     ; Stuck at VCC                                      ;
+; d3   ; Input ; Info     ; Stuck at VCC                                      ;
+; d4   ; Input ; Info     ; Stuck at VCC                                      ;
+; f0   ; Input ; Info     ; Stuck at GND                                      ;
+; f1   ; Input ; Info     ; Stuck at GND                                      ;
+; f2   ; Input ; Info     ; Stuck at GND                                      ;
+; f3   ; Input ; Info     ; Stuck at VCC                                      ;
+; f4   ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset1" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset0" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; c    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; po   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "Scan_Chain:scan_instance|Scan_Reg:In_Reg" ;
++------+-------+----------+--------------------------------------------+
+; Port ; Type  ; Severity ; Details                                    ;
++------+-------+----------+--------------------------------------------+
+; pi   ; Input ; Info     ; Stuck at GND                               ;
++------+-------+----------+--------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Fri Mar  9 21:29:36 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stringRecognizer -c stringRecognizer
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file scan_chain.vhdl
+    Info (12022): Found design unit 1: Scan_Chain-behave
+    Info (12023): Found entity 1: Scan_Chain
+Info (12021): Found 2 design units, including 1 entities, in source file scan_reg.vhdl
+    Info (12022): Found design unit 1: Scan_Reg-behave
+    Info (12023): Found entity 1: Scan_Reg
+Info (12021): Found 2 design units, including 1 entities, in source file TopLevel.vhdl
+    Info (12022): Found design unit 1: TopLevel-Struct
+    Info (12023): Found entity 1: TopLevel
+Info (12021): Found 2 design units, including 1 entities, in source file Testbench.vhd
+    Info (12022): Found design unit 1: Testbench-Behave
+    Info (12023): Found entity 1: Testbench
+Info (12021): Found 2 design units, including 1 entities, in source file terror.vhd
+    Info (12022): Found design unit 1: TERROR-behave
+    Info (12023): Found entity 1: TERROR
+Info (12021): Found 2 design units, including 1 entities, in source file stringRecognizer.vhd
+    Info (12022): Found design unit 1: stringRecognizer-behave
+    Info (12023): Found entity 1: stringRecognizer
+Warning (12090): Entity "MUX" obtained from "MUX.vhd" instead of from Quartus II megafunction library
+Info (12021): Found 4 design units, including 2 entities, in source file MUX.vhd
+    Info (12022): Found design unit 1: MUX_bit-behave
+    Info (12022): Found design unit 2: MUX-behave
+    Info (12023): Found entity 1: MUX_bit
+    Info (12023): Found entity 2: MUX
+Info (12021): Found 2 design units, including 1 entities, in source file KNIFE.vhd
+    Info (12022): Found design unit 1: KNIFE-behave
+    Info (12023): Found entity 1: KNIFE
+Info (12021): Found 2 design units, including 1 entities, in source file GUN.vhd
+    Info (12022): Found design unit 1: GUN-behave
+    Info (12023): Found entity 1: GUN
+Info (12021): Found 2 design units, including 1 entities, in source file DUT.vhd
+    Info (12022): Found design unit 1: DUT-DutWrap
+    Info (12023): Found entity 1: DUT
+Info (12021): Found 2 design units, including 1 entities, in source file D_FF.vhd
+    Info (12022): Found design unit 1: D_FF-WhatDoYouCare
+    Info (12023): Found entity 1: D_FF
+Info (12021): Found 2 design units, including 1 entities, in source file comparator.vhd
+    Info (12022): Found design unit 1: comparator-behave
+    Info (12023): Found entity 1: comparator
+Info (12021): Found 2 design units, including 1 entities, in source file bomb.vhd
+    Info (12022): Found design unit 1: BOMB-behave
+    Info (12023): Found entity 1: BOMB
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "Scan_Chain" for hierarchy "Scan_Chain:scan_instance"
+Warning (10036): Verilog HDL or VHDL warning at scan_chain.vhdl(46): object "unused" assigned a value but never read
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:In_Reg"
+Info (12128): Elaborating entity "Scan_Reg" for hierarchy "Scan_Chain:scan_instance|Scan_Reg:Out_Reg"
+Warning (10445): VHDL Subtype or Type Declaration warning at scan_reg.vhdl(36): subtype or type has null range
+Info (12128): Elaborating entity "DUT" for hierarchy "DUT:dut2"
+Info (12128): Elaborating entity "stringRecognizer" for hierarchy "DUT:dut2|stringRecognizer:dut"
+Info (12128): Elaborating entity "BOMB" for hierarchy "DUT:dut2|stringRecognizer:dut|BOMB:aa"
+Info (12128): Elaborating entity "MUX_bit" for hierarchy "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset0"
+Info (12128): Elaborating entity "MUX" for hierarchy "DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1"
+Info (12128): Elaborating entity "comparator" for hierarchy "DUT:dut2|stringRecognizer:dut|BOMB:aa|comparator:comp"
+Info (12128): Elaborating entity "D_FF" for hierarchy "DUT:dut2|stringRecognizer:dut|BOMB:aa|D_FF:filp0"
+Info (12128): Elaborating entity "KNIFE" for hierarchy "DUT:dut2|stringRecognizer:dut|KNIFE:K"
+Info (12128): Elaborating entity "TERROR" for hierarchy "DUT:dut2|stringRecognizer:dut|TERROR:T"
+Info (12128): Elaborating entity "GUN" for hierarchy "DUT:dut2|stringRecognizer:dut|GUN:G"
+Info (21057): Implemented 81 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 76 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 780 megabytes
+    Info: Processing ended: Fri Mar  9 21:29:38 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -12.196
+TNS   : -158.212
+
+Type  : Setup 'button:master_reset_button|op'
+Slack : -7.270
+TNS   : -32.958
+
+Type  : Setup 'rtl_state.HALT'
+Slack : -2.259
+TNS   : -7.351
+
+Type  : Hold 'button:master_reset_button|op'
+Slack : -5.368
+TNS   : -25.519
+
+Type  : Hold 'rtl_state.HALT'
+Slack : -1.634
+TNS   : -5.249
+
+Type  : Hold 'clk'
+Slack : -1.600
+TNS   : -2.494
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'button:master_reset_button|op'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'rtl_state.HALT'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

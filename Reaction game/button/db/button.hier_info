@@ -1,0 +1,10 @@
+|button
+clk => rtl_state.CLK
+clk => op~reg0.CLK
+clk => next_state.CLK
+click => process_0.IN1
+click => process_0.IN1
+click => process_0.IN1
+op <= op~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

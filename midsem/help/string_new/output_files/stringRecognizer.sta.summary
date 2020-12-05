@@ -1,0 +1,37 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'TCLK'
+Slack : -10.737
+TNS   : -102.676
+
+Type  : Setup 'TRST'
+Slack : -5.936
+TNS   : -57.144
+
+Type  : Hold 'TRST'
+Slack : -1.138
+TNS   : -7.871
+
+Type  : Hold 'TCLK'
+Slack : 0.805
+TNS   : 0.000
+
+Type  : Recovery 'TCLK'
+Slack : -1.183
+TNS   : -5.915
+
+Type  : Removal 'TCLK'
+Slack : 1.129
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'TCLK'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'TRST'
+Slack : -2.289
+TNS   : -2.289
+
+------------------------------------------------------------

@@ -1,0 +1,647 @@
+TimeQuest Timing Analyzer report for ReactionGame
+Thu Apr  5 16:20:47 2018
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'DFlipFlop1:dff10|Q'
+ 12. Setup: 'DFlipFlop1:dff3|Q'
+ 13. Setup: 'DFlipFlop1:dff1|Q'
+ 14. Setup: 'DFlipFlop1:dff5|Q'
+ 15. Setup: 'DFlipFlop1:dff7|Q'
+ 16. Setup: 'DFlipFlop1:dff2|Q'
+ 17. Setup: 'DFlipFlop1:dff9|Q'
+ 18. Setup: 'DFlipFlop1:dff8|Q'
+ 19. Setup: 'DFlipFlop1:dff6|Q'
+ 20. Setup: 'DFlipFlop1:dff4|Q'
+ 21. Setup: 'clk'
+ 22. Hold: 'clk'
+ 23. Hold: 'DFlipFlop1:dff4|Q'
+ 24. Hold: 'DFlipFlop1:dff6|Q'
+ 25. Hold: 'DFlipFlop1:dff8|Q'
+ 26. Hold: 'DFlipFlop1:dff9|Q'
+ 27. Hold: 'DFlipFlop1:dff2|Q'
+ 28. Hold: 'DFlipFlop1:dff7|Q'
+ 29. Hold: 'DFlipFlop1:dff5|Q'
+ 30. Hold: 'DFlipFlop1:dff1|Q'
+ 31. Hold: 'DFlipFlop1:dff3|Q'
+ 32. Hold: 'DFlipFlop1:dff10|Q'
+ 33. Setup Transfers
+ 34. Hold Transfers
+ 35. Report TCCS
+ 36. Report RSKM
+ 37. Unconstrained Paths Summary
+ 38. Clock Status Summary
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. Unconstrained Input Ports
+ 42. Unconstrained Output Ports
+ 43. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; ReactionGame                                        ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                 ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; Clock Name         ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+; clk                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                ;
+; DFlipFlop1:dff1|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff1|Q }  ;
+; DFlipFlop1:dff2|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff2|Q }  ;
+; DFlipFlop1:dff3|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff3|Q }  ;
+; DFlipFlop1:dff4|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff4|Q }  ;
+; DFlipFlop1:dff5|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff5|Q }  ;
+; DFlipFlop1:dff6|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff6|Q }  ;
+; DFlipFlop1:dff7|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff7|Q }  ;
+; DFlipFlop1:dff8|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff8|Q }  ;
+; DFlipFlop1:dff9|Q  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff9|Q }  ;
+; DFlipFlop1:dff10|Q ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DFlipFlop1:dff10|Q } ;
++--------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------+
+
+
++----------------------------------------------------------+
+; Fmax Summary                                             ;
++------------+-----------------+--------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name         ; Note ;
++------------+-----------------+--------------------+------+
+; 455.79 MHz ; 455.79 MHz      ; DFlipFlop1:dff10|Q ;      ;
++------------+-----------------+--------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------+
+; Setup Summary                               ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; DFlipFlop1:dff10|Q ; -1.194 ; -1.194        ;
+; DFlipFlop1:dff3|Q  ; 0.457  ; 0.000         ;
+; DFlipFlop1:dff1|Q  ; 0.467  ; 0.000         ;
+; DFlipFlop1:dff5|Q  ; 0.469  ; 0.000         ;
+; DFlipFlop1:dff7|Q  ; 0.470  ; 0.000         ;
+; DFlipFlop1:dff2|Q  ; 0.799  ; 0.000         ;
+; DFlipFlop1:dff9|Q  ; 0.836  ; 0.000         ;
+; DFlipFlop1:dff8|Q  ; 0.846  ; 0.000         ;
+; DFlipFlop1:dff6|Q  ; 1.146  ; 0.000         ;
+; DFlipFlop1:dff4|Q  ; 1.340  ; 0.000         ;
+; clk                ; 1.666  ; 0.000         ;
++--------------------+--------+---------------+
+
+
++---------------------------------------------+
+; Hold Summary                                ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; clk                ; -1.720 ; -1.720        ;
+; DFlipFlop1:dff4|Q  ; -1.394 ; -1.394        ;
+; DFlipFlop1:dff6|Q  ; -1.200 ; -1.200        ;
+; DFlipFlop1:dff8|Q  ; -0.900 ; -0.900        ;
+; DFlipFlop1:dff9|Q  ; -0.890 ; -0.890        ;
+; DFlipFlop1:dff2|Q  ; -0.853 ; -0.853        ;
+; DFlipFlop1:dff7|Q  ; -0.524 ; -0.524        ;
+; DFlipFlop1:dff5|Q  ; -0.523 ; -0.523        ;
+; DFlipFlop1:dff1|Q  ; -0.521 ; -0.521        ;
+; DFlipFlop1:dff3|Q  ; -0.511 ; -0.511        ;
+; DFlipFlop1:dff10|Q ; 1.640  ; 0.000         ;
++--------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------+
+; Minimum Pulse Width Summary                 ;
++--------------------+--------+---------------+
+; Clock              ; Slack  ; End Point TNS ;
++--------------------+--------+---------------+
+; clk                ; -2.289 ; -2.289        ;
+; DFlipFlop1:dff10|Q ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff1|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff2|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff3|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff4|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff5|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff6|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff7|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff8|Q  ; 0.234  ; 0.000         ;
+; DFlipFlop1:dff9|Q  ; 0.234  ; 0.000         ;
++--------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff10|Q'                                                                                                         ;
++--------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+; -1.194 ; DFlipFlop1:dff11|Q ; DFlipFlop1:dff11|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; 1.000        ; 0.000      ; 1.861      ;
++--------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff3|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.457 ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff3|Q ; 0.500        ; 1.793      ; 1.879      ;
+; 0.957 ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff3|Q ; 1.000        ; 1.793      ; 1.879      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff1|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.467 ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff1|Q ; 0.500        ; 1.784      ; 1.860      ;
+; 0.967 ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff1|Q ; 1.000        ; 1.784      ; 1.860      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff5|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.469 ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff5|Q ; 0.500        ; 1.787      ; 1.861      ;
+; 0.969 ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff5|Q ; 1.000        ; 1.787      ; 1.861      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff7|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.470 ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff7|Q ; 0.500        ; 1.787      ; 1.860      ;
+; 0.970 ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff7|Q ; 1.000        ; 1.787      ; 1.860      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff2|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.799 ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff2|Q ; 0.500        ; 2.143      ; 1.887      ;
+; 1.299 ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff2|Q ; 1.000        ; 2.143      ; 1.887      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff9|Q'                                                                                                        ;
++-------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock       ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+; 0.836 ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q ; 0.500        ; 2.171      ; 1.878      ;
+; 1.336 ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q ; 1.000        ; 2.171      ; 1.878      ;
++-------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff8|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 0.846 ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff8|Q ; 0.500        ; 2.164      ; 1.861      ;
+; 1.346 ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff8|Q ; 1.000        ; 2.164      ; 1.861      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff6|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 1.146 ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff6|Q ; 0.500        ; 2.739      ; 2.136      ;
+; 1.646 ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff6|Q ; 1.000        ; 2.739      ; 2.136      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'DFlipFlop1:dff4|Q'                                                                                                     ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; 1.340 ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff4|Q ; 0.500        ; 2.933      ; 2.136      ;
+; 1.840 ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff4|Q ; 1.000        ; 2.933      ; 2.136      ;
++-------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                             ;
++-------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+; 1.666 ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; clk         ; 0.500        ; 3.261      ; 2.138      ;
+; 2.166 ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; clk         ; 1.000        ; 3.261      ; 2.138      ;
++-------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                               ;
++--------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+; -1.720 ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; clk         ; 0.000        ; 3.261      ; 2.138      ;
+; -1.220 ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; DFlipFlop1:dff1|Q ; clk         ; -0.500       ; 3.261      ; 2.138      ;
++--------+-------------------+-------------------+-------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff4|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -1.394 ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff4|Q ; 0.000        ; 2.933      ; 2.136      ;
+; -0.894 ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff5|Q ; DFlipFlop1:dff4|Q ; -0.500       ; 2.933      ; 2.136      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff6|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -1.200 ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff6|Q ; 0.000        ; 2.739      ; 2.136      ;
+; -0.700 ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff7|Q ; DFlipFlop1:dff6|Q ; -0.500       ; 2.739      ; 2.136      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff8|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.900 ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff8|Q ; 0.000        ; 2.164      ; 1.861      ;
+; -0.400 ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff9|Q ; DFlipFlop1:dff8|Q ; -0.500       ; 2.164      ; 1.861      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff9|Q'                                                                                                          ;
++--------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock       ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+; -0.890 ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q ; 0.000        ; 2.171      ; 1.878      ;
+; -0.390 ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q ; -0.500       ; 2.171      ; 1.878      ;
++--------+--------------------+--------------------+--------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff2|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.853 ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff2|Q ; 0.000        ; 2.143      ; 1.887      ;
+; -0.353 ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff3|Q ; DFlipFlop1:dff2|Q ; -0.500       ; 2.143      ; 1.887      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff7|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.524 ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff7|Q ; 0.000        ; 1.787      ; 1.860      ;
+; -0.024 ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff8|Q ; DFlipFlop1:dff7|Q ; -0.500       ; 1.787      ; 1.860      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff5|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.523 ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff5|Q ; 0.000        ; 1.787      ; 1.861      ;
+; -0.023 ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff6|Q ; DFlipFlop1:dff5|Q ; -0.500       ; 1.787      ; 1.861      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff1|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.521 ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff1|Q ; 0.000        ; 1.784      ; 1.860      ;
+; -0.021 ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff2|Q ; DFlipFlop1:dff1|Q ; -0.500       ; 1.784      ; 1.860      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff3|Q'                                                                                                       ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+; -0.511 ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff3|Q ; 0.000        ; 1.793      ; 1.879      ;
+; -0.011 ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff4|Q ; DFlipFlop1:dff3|Q ; -0.500       ; 1.793      ; 1.879      ;
++--------+-------------------+-------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'DFlipFlop1:dff10|Q'                                                                                                         ;
++-------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock       ; Latch Clock        ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+; 1.640 ; DFlipFlop1:dff11|Q ; DFlipFlop1:dff11|Q ; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; 0.000        ; 0.000      ; 1.861      ;
++-------+--------------------+--------------------+--------------------+--------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; Setup Transfers                                                                     ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; DFlipFlop1:dff1|Q  ; clk                ; 1        ; 1        ; 0        ; 0        ;
+; DFlipFlop1:dff2|Q  ; DFlipFlop1:dff1|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff3|Q  ; DFlipFlop1:dff2|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff4|Q  ; DFlipFlop1:dff3|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff5|Q  ; DFlipFlop1:dff4|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff6|Q  ; DFlipFlop1:dff5|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff7|Q  ; DFlipFlop1:dff6|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff8|Q  ; DFlipFlop1:dff7|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff9|Q  ; DFlipFlop1:dff8|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; 0        ; 0        ; 0        ; 1        ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------+
+; Hold Transfers                                                                      ;
++--------------------+--------------------+----------+----------+----------+----------+
+; From Clock         ; To Clock           ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------+--------------------+----------+----------+----------+----------+
+; DFlipFlop1:dff1|Q  ; clk                ; 1        ; 1        ; 0        ; 0        ;
+; DFlipFlop1:dff2|Q  ; DFlipFlop1:dff1|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff3|Q  ; DFlipFlop1:dff2|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff4|Q  ; DFlipFlop1:dff3|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff5|Q  ; DFlipFlop1:dff4|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff6|Q  ; DFlipFlop1:dff5|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff7|Q  ; DFlipFlop1:dff6|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff8|Q  ; DFlipFlop1:dff7|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff9|Q  ; DFlipFlop1:dff8|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff10|Q ; DFlipFlop1:dff9|Q  ; 0        ; 0        ; 1        ; 1        ;
+; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; 0        ; 0        ; 0        ; 1        ;
++--------------------+--------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 11    ; 11   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 11    ; 11   ;
++---------------------------------+-------+------+
+
+
++--------------------------------------------------------------+
+; Clock Status Summary                                         ;
++--------------------+--------------------+------+-------------+
+; Target             ; Clock              ; Type ; Status      ;
++--------------------+--------------------+------+-------------+
+; DFlipFlop1:dff1|Q  ; DFlipFlop1:dff1|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff2|Q  ; DFlipFlop1:dff2|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff3|Q  ; DFlipFlop1:dff3|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff4|Q  ; DFlipFlop1:dff4|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff5|Q  ; DFlipFlop1:dff5|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff6|Q  ; DFlipFlop1:dff6|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff7|Q  ; DFlipFlop1:dff7|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff8|Q  ; DFlipFlop1:dff8|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff9|Q  ; DFlipFlop1:dff9|Q  ; Base ; Constrained ;
+; DFlipFlop1:dff10|Q ; DFlipFlop1:dff10|Q ; Base ; Constrained ;
+; clk                ; clk                ; Base ; Constrained ;
++--------------------+--------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; counter[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; counter[0]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[1]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[2]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[3]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[4]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[5]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[6]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[7]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[8]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[9]  ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; counter[10] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Thu Apr  5 16:20:46 2018
+Info: Command: quartus_sta ReactionGame -c ReactionGame
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ReactionGame.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff1|Q DFlipFlop1:dff1|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff2|Q DFlipFlop1:dff2|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff3|Q DFlipFlop1:dff3|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff4|Q DFlipFlop1:dff4|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff5|Q DFlipFlop1:dff5|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff6|Q DFlipFlop1:dff6|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff7|Q DFlipFlop1:dff7|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff8|Q DFlipFlop1:dff8|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff9|Q DFlipFlop1:dff9|Q
+    Info (332105): create_clock -period 1.000 -name DFlipFlop1:dff10|Q DFlipFlop1:dff10|Q
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.194
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.194              -1.194 DFlipFlop1:dff10|Q 
+    Info (332119):     0.457               0.000 DFlipFlop1:dff3|Q 
+    Info (332119):     0.467               0.000 DFlipFlop1:dff1|Q 
+    Info (332119):     0.469               0.000 DFlipFlop1:dff5|Q 
+    Info (332119):     0.470               0.000 DFlipFlop1:dff7|Q 
+    Info (332119):     0.799               0.000 DFlipFlop1:dff2|Q 
+    Info (332119):     0.836               0.000 DFlipFlop1:dff9|Q 
+    Info (332119):     0.846               0.000 DFlipFlop1:dff8|Q 
+    Info (332119):     1.146               0.000 DFlipFlop1:dff6|Q 
+    Info (332119):     1.340               0.000 DFlipFlop1:dff4|Q 
+    Info (332119):     1.666               0.000 clk 
+Info (332146): Worst-case hold slack is -1.720
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.720              -1.720 clk 
+    Info (332119):    -1.394              -1.394 DFlipFlop1:dff4|Q 
+    Info (332119):    -1.200              -1.200 DFlipFlop1:dff6|Q 
+    Info (332119):    -0.900              -0.900 DFlipFlop1:dff8|Q 
+    Info (332119):    -0.890              -0.890 DFlipFlop1:dff9|Q 
+    Info (332119):    -0.853              -0.853 DFlipFlop1:dff2|Q 
+    Info (332119):    -0.524              -0.524 DFlipFlop1:dff7|Q 
+    Info (332119):    -0.523              -0.523 DFlipFlop1:dff5|Q 
+    Info (332119):    -0.521              -0.521 DFlipFlop1:dff1|Q 
+    Info (332119):    -0.511              -0.511 DFlipFlop1:dff3|Q 
+    Info (332119):     1.640               0.000 DFlipFlop1:dff10|Q 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff10|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff1|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff2|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff3|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff4|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff5|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff6|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff7|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff8|Q 
+    Info (332119):     0.234               0.000 DFlipFlop1:dff9|Q 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 723 megabytes
+    Info: Processing ended: Thu Apr  5 16:20:47 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

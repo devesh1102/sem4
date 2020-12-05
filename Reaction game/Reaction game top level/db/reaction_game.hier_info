@@ -1,0 +1,189 @@
+|reaction_game
+clk => clk_1ms:clock_1ms.clk
+clk => rand_gen:randgen.clk
+mreset => button:master_reset_button.click
+react => trig.IN1
+react => button:react_button.click
+show_state[0] << show_state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+show_state[1] << show_state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+led << led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|clk_1ms:clock_1ms
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => rtl_state.CLK
+clk_out <= clk_out$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|counter3:counter1
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => rtl_state.CLK
+clk => done~reg0.CLK
+reset => rtl_state.OUTPUTSELECT
+start => next_rtl_state.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|counter3:counter2
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => rtl_state.CLK
+clk => done~reg0.CLK
+reset => rtl_state.OUTPUTSELECT
+start => next_rtl_state.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|rand_gen:randgen
+trigger => rand[0]~reg0.CLK
+trigger => rand[1]~reg0.CLK
+trigger => rand[2]~reg0.CLK
+trigger => rand[3]~reg0.CLK
+trigger => rand[4]~reg0.CLK
+trigger => rand[5]~reg0.CLK
+trigger => rand[6]~reg0.CLK
+trigger => rand[7]~reg0.CLK
+trigger => rand[8]~reg0.CLK
+trigger => rand[9]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+rand[0] <= rand[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[1] <= rand[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[2] <= rand[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[3] <= rand[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[4] <= rand[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[5] <= rand[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[6] <= rand[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[7] <= rand[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[8] <= rand[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[9] <= rand[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|button:react_button
+clk => rtl_state.CLK
+clk => op~reg0.CLK
+clk => next_state.CLK
+click => process_0.IN1
+click => process_0.IN1
+click => process_0.IN1
+op <= op~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|reaction_game|button:master_reset_button
+clk => rtl_state.CLK
+clk => op~reg0.CLK
+clk => next_state.CLK
+click => process_0.IN1
+click => process_0.IN1
+click => process_0.IN1
+op <= op~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,920 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
+
+// DATE "04/12/2018 23:30:13"
+
+// 
+// Device: Altera 5M1270ZT144C5 Package TQFP144
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Debouncer (
+	X,
+	CLK,
+	reset,
+	Y);
+input 	X;
+input 	CLK;
+input 	reset;
+output 	Y;
+
+// Design Ports Information
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("Debouncer_v.sdo");
+// synopsys translate_on
+
+wire \CLK~combout ;
+wire \reset~combout ;
+wire \divider1|divideby2_1|dff1|Q~regout ;
+wire \divider1|divideby2_2|dff1|Q~regout ;
+wire \divider1|divideby_2_3|dff1|Q~regout ;
+wire \divider1|divideby_2_4|dff1|Q~regout ;
+wire \divider1|divideby_2_5|dff1|Q~regout ;
+wire \divider1|divideby_2_6|dff1|Q~regout ;
+wire \divider1|divideby_2_7|dff1|Q~regout ;
+wire \divider1|divideby_2_8|dff1|Q~regout ;
+wire \divider1|divideby_2_9|dff1|Q~regout ;
+wire \divider1|divideby_2_10|dff1|Q~regout ;
+wire \divider1|divideby_2_11|dff1|Q~regout ;
+wire \divider1|divideby_2_12|dff1|Q~regout ;
+wire \divider1|divideby_2_13|dff1|Q~regout ;
+wire \divider1|divideby_2_14|dff1|Q~regout ;
+wire \divider1|divideby_2_15|dff1|Q~regout ;
+wire \divider1|divideby_2_16|dff1|Q~regout ;
+wire \divider1|divideby_2_17|dff1|Q~regout ;
+wire \divider1|divideby_2_18|dff1|Q~regout ;
+wire \divider1|divideby_2_19|dff1|Q~regout ;
+wire \X~combout ;
+wire \dff0|Q~regout ;
+wire \dff2|Q~regout ;
+wire \dff|Q~regout ;
+wire \Y~0 ;
+
+
+// Location: PIN_89,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \CLK~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\CLK~combout ),
+	.padio(CLK));
+// synopsys translate_off
+defparam \CLK~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \reset~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\reset~combout ),
+	.padio(reset));
+// synopsys translate_off
+defparam \reset~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: LC_X16_Y5_N4
+maxv_lcell \divider1|divideby2_1|dff1|Q (
+// Equation(s):
+// \divider1|divideby2_1|dff1|Q~regout  = DFFEAS((((!\divider1|divideby2_1|dff1|Q~regout  & !\reset~combout ))), \CLK~combout , VCC, , , , , , )
+
+	.clk(\CLK~combout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\divider1|divideby2_1|dff1|Q~regout ),
+	.datad(\reset~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby2_1|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby2_1|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby2_1|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby2_1|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby2_1|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby2_1|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby2_1|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X16_Y5_N2
+maxv_lcell \divider1|divideby2_2|dff1|Q (
+// Equation(s):
+// \divider1|divideby2_2|dff1|Q~regout  = DFFEAS(((!\reset~combout  & ((!\divider1|divideby2_2|dff1|Q~regout )))), !\divider1|divideby2_1|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby2_1|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(\reset~combout ),
+	.datac(vcc),
+	.datad(\divider1|divideby2_2|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby2_2|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby2_2|dff1|Q .lut_mask = "0033";
+defparam \divider1|divideby2_2|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby2_2|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby2_2|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby2_2|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby2_2|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y5_N8
+maxv_lcell \divider1|divideby_2_3|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_3|dff1|Q~regout  = DFFEAS(((!\reset~combout  & ((!\divider1|divideby_2_3|dff1|Q~regout )))), !\divider1|divideby2_2|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby2_2|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(\reset~combout ),
+	.datac(vcc),
+	.datad(\divider1|divideby_2_3|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_3|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_3|dff1|Q .lut_mask = "0033";
+defparam \divider1|divideby_2_3|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_3|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_3|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_3|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_3|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y5_N3
+maxv_lcell \divider1|divideby_2_4|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_4|dff1|Q~regout  = DFFEAS(((!\reset~combout  & ((!\divider1|divideby_2_4|dff1|Q~regout )))), !\divider1|divideby_2_3|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_3|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(\reset~combout ),
+	.datac(vcc),
+	.datad(\divider1|divideby_2_4|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_4|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_4|dff1|Q .lut_mask = "0033";
+defparam \divider1|divideby_2_4|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_4|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_4|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_4|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_4|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y4_N4
+maxv_lcell \divider1|divideby_2_5|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_5|dff1|Q~regout  = DFFEAS((((!\divider1|divideby_2_5|dff1|Q~regout  & !\reset~combout ))), !\divider1|divideby_2_4|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_4|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\divider1|divideby_2_5|dff1|Q~regout ),
+	.datad(\reset~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_5|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_5|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_5|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_5|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_5|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_5|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_5|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y4_N2
+maxv_lcell \divider1|divideby_2_6|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_6|dff1|Q~regout  = DFFEAS((!\reset~combout  & (((!\divider1|divideby_2_6|dff1|Q~regout )))), !\divider1|divideby_2_5|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_5|dff1|Q~regout ),
+	.dataa(\reset~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\divider1|divideby_2_6|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_6|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_6|dff1|Q .lut_mask = "0055";
+defparam \divider1|divideby_2_6|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_6|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_6|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_6|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_6|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X16_Y1_N4
+maxv_lcell \divider1|divideby_2_7|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_7|dff1|Q~regout  = DFFEAS((((!\divider1|divideby_2_7|dff1|Q~regout  & !\reset~combout ))), !\divider1|divideby_2_6|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_6|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\divider1|divideby_2_7|dff1|Q~regout ),
+	.datad(\reset~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_7|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_7|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_7|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_7|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_7|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_7|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_7|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X16_Y1_N2
+maxv_lcell \divider1|divideby_2_8|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_8|dff1|Q~regout  = DFFEAS((!\reset~combout  & (((!\divider1|divideby_2_8|dff1|Q~regout )))), !\divider1|divideby_2_7|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_7|dff1|Q~regout ),
+	.dataa(\reset~combout ),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\divider1|divideby_2_8|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_8|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_8|dff1|Q .lut_mask = "0055";
+defparam \divider1|divideby_2_8|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_8|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_8|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_8|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_8|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y1_N8
+maxv_lcell \divider1|divideby_2_9|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_9|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_9|dff1|Q~regout ))), !\divider1|divideby_2_8|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_8|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_9|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_9|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_9|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_9|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_9|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_9|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_9|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_9|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X15_Y1_N9
+maxv_lcell \divider1|divideby_2_10|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_10|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_10|dff1|Q~regout ))), !\divider1|divideby_2_9|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_9|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_10|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_10|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_10|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_10|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_10|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_10|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_10|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_10|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X14_Y1_N8
+maxv_lcell \divider1|divideby_2_11|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_11|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_11|dff1|Q~regout ))), !\divider1|divideby_2_10|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_10|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_11|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_11|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_11|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_11|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_11|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_11|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_11|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_11|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X14_Y1_N1
+maxv_lcell \divider1|divideby_2_12|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_12|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_12|dff1|Q~regout ))), !\divider1|divideby_2_11|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_11|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_12|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_12|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_12|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_12|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_12|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_12|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_12|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_12|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X14_Y2_N4
+maxv_lcell \divider1|divideby_2_13|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_13|dff1|Q~regout  = DFFEAS((((!\divider1|divideby_2_13|dff1|Q~regout  & !\reset~combout ))), !\divider1|divideby_2_12|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_12|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\divider1|divideby_2_13|dff1|Q~regout ),
+	.datad(\reset~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_13|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_13|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_13|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_13|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_13|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_13|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_13|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X14_Y2_N2
+maxv_lcell \divider1|divideby_2_14|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_14|dff1|Q~regout  = DFFEAS(((!\reset~combout  & ((!\divider1|divideby_2_14|dff1|Q~regout )))), !\divider1|divideby_2_13|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_13|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(\reset~combout ),
+	.datac(vcc),
+	.datad(\divider1|divideby_2_14|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_14|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_14|dff1|Q .lut_mask = "0033";
+defparam \divider1|divideby_2_14|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_14|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_14|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_14|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_14|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y2_N7
+maxv_lcell \divider1|divideby_2_15|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_15|dff1|Q~regout  = DFFEAS(((!\reset~combout  & (!\divider1|divideby_2_15|dff1|Q~regout ))), !\divider1|divideby_2_14|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_14|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(\reset~combout ),
+	.datac(\divider1|divideby_2_15|dff1|Q~regout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_15|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_15|dff1|Q .lut_mask = "0303";
+defparam \divider1|divideby_2_15|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_15|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_15|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_15|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_15|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y3_N4
+maxv_lcell \divider1|divideby_2_16|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_16|dff1|Q~regout  = DFFEAS((!\reset~combout  & (((!\divider1|divideby_2_16|dff1|Q~regout )))), !\divider1|divideby_2_15|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_15|dff1|Q~regout ),
+	.dataa(\reset~combout ),
+	.datab(vcc),
+	.datac(\divider1|divideby_2_16|dff1|Q~regout ),
+	.datad(vcc),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_16|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_16|dff1|Q .lut_mask = "0505";
+defparam \divider1|divideby_2_16|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_16|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_16|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_16|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_16|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y3_N2
+maxv_lcell \divider1|divideby_2_17|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_17|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_17|dff1|Q~regout ))), !\divider1|divideby_2_16|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_16|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_17|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_17|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_17|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_17|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_17|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_17|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_17|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_17|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y3_N8
+maxv_lcell \divider1|divideby_2_18|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_18|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_18|dff1|Q~regout ))), !\divider1|divideby_2_17|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_17|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_18|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_18|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_18|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_18|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_18|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_18|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_18|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_18|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X12_Y3_N9
+maxv_lcell \divider1|divideby_2_19|dff1|Q (
+// Equation(s):
+// \divider1|divideby_2_19|dff1|Q~regout  = DFFEAS((((!\reset~combout  & !\divider1|divideby_2_19|dff1|Q~regout ))), !\divider1|divideby_2_18|dff1|Q~regout , VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_18|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(\reset~combout ),
+	.datad(\divider1|divideby_2_19|dff1|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\divider1|divideby_2_19|dff1|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \divider1|divideby_2_19|dff1|Q .lut_mask = "000f";
+defparam \divider1|divideby_2_19|dff1|Q .operation_mode = "normal";
+defparam \divider1|divideby_2_19|dff1|Q .output_mode = "reg_only";
+defparam \divider1|divideby_2_19|dff1|Q .register_cascade_mode = "off";
+defparam \divider1|divideby_2_19|dff1|Q .sum_lutc_input = "datac";
+defparam \divider1|divideby_2_19|dff1|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_66,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+maxv_io \X~I (
+	.datain(gnd),
+	.oe(gnd),
+	.combout(\X~combout ),
+	.padio(X));
+// synopsys translate_off
+defparam \X~I .operation_mode = "input";
+// synopsys translate_on
+
+// Location: LC_X13_Y2_N0
+maxv_lcell \dff0|Q (
+// Equation(s):
+// \dff0|Q~regout  = DFFEAS((((\X~combout ))), !GLOBAL(\divider1|divideby_2_19|dff1|Q~regout ), VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_19|dff1|Q~regout ),
+	.dataa(vcc),
+	.datab(vcc),
+	.datac(vcc),
+	.datad(\X~combout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\dff0|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \dff0|Q .lut_mask = "ff00";
+defparam \dff0|Q .operation_mode = "normal";
+defparam \dff0|Q .output_mode = "reg_only";
+defparam \dff0|Q .register_cascade_mode = "off";
+defparam \dff0|Q .sum_lutc_input = "datac";
+defparam \dff0|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y2_N6
+maxv_lcell \dff2|Q (
+// Equation(s):
+// \Y~0  = (!\reset~combout  & ((\dff|Q~regout  & (\dff0|Q~regout )) # (!\dff|Q~regout  & ((B22_Q)))))
+// \dff2|Q~regout  = DFFEAS(\Y~0 , !GLOBAL(\divider1|divideby_2_19|dff1|Q~regout ), VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_19|dff1|Q~regout ),
+	.dataa(\reset~combout ),
+	.datab(\dff0|Q~regout ),
+	.datac(vcc),
+	.datad(\dff|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(\Y~0 ),
+	.regout(\dff2|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \dff2|Q .lut_mask = "4450";
+defparam \dff2|Q .operation_mode = "normal";
+defparam \dff2|Q .output_mode = "reg_and_comb";
+defparam \dff2|Q .register_cascade_mode = "off";
+defparam \dff2|Q .sum_lutc_input = "qfbk";
+defparam \dff2|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: LC_X13_Y2_N9
+maxv_lcell \dff|Q (
+// Equation(s):
+// \dff|Q~regout  = DFFEAS((!\reset~combout  & (!\dff|Q~regout  & (\dff0|Q~regout  $ (\dff2|Q~regout )))), !GLOBAL(\divider1|divideby_2_19|dff1|Q~regout ), VCC, , , , , , )
+
+	.clk(!\divider1|divideby_2_19|dff1|Q~regout ),
+	.dataa(\reset~combout ),
+	.datab(\dff0|Q~regout ),
+	.datac(\dff2|Q~regout ),
+	.datad(\dff|Q~regout ),
+	.aclr(gnd),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.cin(gnd),
+	.cin0(gnd),
+	.cin1(vcc),
+	.inverta(gnd),
+	.regcascin(gnd),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.combout(),
+	.regout(\dff|Q~regout ),
+	.cout(),
+	.cout0(),
+	.cout1());
+// synopsys translate_off
+defparam \dff|Q .lut_mask = "0014";
+defparam \dff|Q .operation_mode = "normal";
+defparam \dff|Q .output_mode = "reg_only";
+defparam \dff|Q .register_cascade_mode = "off";
+defparam \dff|Q .sum_lutc_input = "datac";
+defparam \dff|Q .synch_mode = "off";
+// synopsys translate_on
+
+// Location: PIN_68,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+maxv_io \Y~I (
+	.datain(\Y~0 ),
+	.oe(vcc),
+	.combout(),
+	.padio(Y));
+// synopsys translate_off
+defparam \Y~I .operation_mode = "output";
+// synopsys translate_on
+
+endmodule

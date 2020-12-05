@@ -1,0 +1,60 @@
+# ERROR: No extended dataflow license exists
+# do rand_gen_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/parth/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:55:54 on Apr 06,2018
+# vcom -reportprogress 300 -93 -work work /home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity rand_gen
+# -- Compiling architecture Behave of rand_gen
+# End time: 16:55:54 on Apr 06,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.rand_gen
+# vsim work.rand_gen 
+# Start time: 16:56:14 on Apr 06,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rand_gen(behave)
+add wave -position insertpoint  \
+sim:/rand_gen/clk
+add wave -position insertpoint  \
+sim:/rand_gen/count
+add wave -position insertpoint  \
+sim:/rand_gen/rand
+add wave -position insertpoint  \
+sim:/rand_gen/trigger
+force -freeze sim:/rand_gen/trigger 0 0
+force -freeze sim:/rand_gen/clk 1 0ns, 0 {5000 ps} -r 10ns
+run
+run
+run
+force -freeze sim:/rand_gen/trigger 1 0
+run
+run
+run
+run
+run
+noforce sim:/rand_gen/trigger
+force -freeze sim:/rand_gen/trigger 0 0
+run
+run
+# End time: 17:03:44 on Apr 06,2018, Elapsed time: 0:07:30
+# Errors: 0, Warnings: 0

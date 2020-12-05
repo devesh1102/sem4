@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx,hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=magenta,
+urlcolor=red,
+}
+%
+% Title.
+\title{EE230: Experiment 7\\
+Switched Capacitor Circuits}
+
+% Author
+\author{Name of student, Roll. no.}
+
+% begin the document.
+\begin{document}
+
+% make a title page.
+\maketitle
+
+\section{Overview of the experiment}
+
+\subsection{Aim of the experiment}
+
+In your own words, describe the aim of the experiment.
+
+\subsection{Methods}
+
+In your own words, describe how you set out to realize the goal of the experiment. Only 1 paragraph of a brief overview of your approach is expected here. Do not list your observations here.
+
+\section{Experimental results}
+
+\subsection{Comparison of discrete RC integrator and switched-capacitor integrator}
+
+Include the circuit diagrams for the two circuits.
+Include your oscilloscope screenshots, and comment on the nature of the waveforms.
+
+Answer the two questions asked on slides 5 and 6 of the handout slides.
+
+\subsection{Fourth order switched-capacitor Butterworth filter}
+
+Include the circuit diagram. In your text, enter the values for the resistors that you calculated in the exercise.
+
+Tabulate your frequency response data and include your amplitude and phase response Bode plots (log-log). Answer questions asked on slide 8.
+
+What challenges did you face in performing this part of the experiment?
+
+\subsection{Fourth order discrete RC Butterworth filter}
+
+Include the circuit diagram.
+
+Tabulate your frequency response data. Overlay the Bode plots for the discrete RC and switched-capacitor $4^{th}$ order Butterworth filter on the same plot (separate plots for amplitude and phase) and include in this section. Compare the two different implementations and answer questions asked on slide 10.
+
+What challenges did you face in performing this part of the experiment?
+
+\section{Questions for reflection}
+
+1. In switched capacitor circuits, both the time-stamp as well as amplitude of the signal are discretized (i.e. not continuous). Would this create problem if it were used in an audio amplifier? Or could you choose the sampling frequency wisely to avoid problems? Answer the question, as an electrical engineer would.\\
+Ans. Enter answer here.
+\\\\
+2. Read \href{http://www.analog.com/en/analog-dialogue/articles/practical-filter-design-precision-adcs.html}{this} article to gain some good insights into filter design. Why is a Butterworth filter a good choice for an anti-aliasing filter? (hint: think of pass-band ripple)\\
+Ans. Enter answer here.
+\\\\
+3. An often overlooked aspect of filter design is group delay. Read \href{http://in.mathworks.com/help/signal/ref/grpdelay.html#bt6hrjd}{this} link to see how the group delay for a Butterworth filter would look like (and some matlab resources to simulate any such filter). Clearly, the group delay is not flat for all frequencies in the pass-band. What problems may this cause? (hint: think of dispersion). The best filter design from group delay flatness perspective is a Bessel-Thomson filter.\\
+Ans. Enter answer here.
+\\\\
+Useful link: http://www.analog.com/designtools/en/filterwizard/ (to quickly design an analog filter)
+
+\end{document}

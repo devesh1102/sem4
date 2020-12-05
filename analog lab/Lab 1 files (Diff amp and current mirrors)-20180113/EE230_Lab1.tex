@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+  
+%
+% Title.
+\title{EE230: Experiment 1\\
+Differential Amplifier and Current Mirrors}
+
+% Author
+\author{Name of student,Roll. no.}
+
+% begin the document.
+\begin{document}
+
+% make a title page.
+\maketitle
+
+\section{Overview of the experiment}
+
+\subsection{Aim of the experiment}
+
+In your own words, describe the aim of the experiment.
+
+\subsection{Methods}
+
+In your own words, describe how you set out to realize the goal of the experiment. Only 1 paragraph of a brief overview of your approach is expected here. Do not list your observations here.
+
+\section{Design}
+
+In this section, explain your design for the current mirror, and differential amplifier in both parts of the experiment (differential amplifier with A: resistive loads, B: active load). An equation based analysis, with supporting circuit diagrams is expected. Circuit diagrams must be made in Xcircuit \textbf{(copy-paste from handout will be counted as plagiarism).}
+
+\section{Simulation results}
+
+\subsection{Code snippet}
+
+Enter your ngspice code here.
+
+\subsection{Simulation results}
+
+Enter your simulation plots, together with text explaining the plots. All figures must have legible fonts, and a caption that makes sense.
+
+\section{Experimental results}
+
+\subsection{Current mirror}
+
+Current mirror characterization results go here. Mention what component values you used with appropriate circuit diagram, and what your measured values were.
+
+\subsection{Differential amplifier with resistive load}
+
+Mention what component values you used with appropriate circuit diagram, and what your measured values were. Add any DSO screen captures you may have got on your phone. Address the following points:\\
+
+1. What value of resistive load did you apply? What gain did you measure, vs what you expected? Explain why there are discrepancies, if any. Was the output swing symmetric?\\
+2. Was there distortion? How did you tweak the circuit to address this challenge?\\
+3. Maximum symmetric output swing at 1kHz.\\
+4. Measured common mode gain, and CMRR.\\
+5. Measured offset voltage of differential amplifier.\\
+6. Comparison with 2 other groups - mention which groups you compared to (names and roll numbers), and comment on any differences in observations - why are the answers different?
+
+\subsection{Differential amplifier with active load}
+
+Mention what component values you used with appropriate circuit diagram, and what your measured values were. Add any DSO screen captures you may have got on your phone. Address the following points:\\
+
+1. What value of bias current did you need to apply? How did you design the current mirror i.e. component values?\\
+2. Was there distortion? How did you tweak the circuit to address this challenge?\\
+3. Maximum symmetric output swing at 1kHz.\\
+4. Measured differential gain at all frequencies, and corresponding modifications you had to make.\\
+5. Comparison with 2 other groups - mention which groups you compared to (names and roll numbers), and comment on any differences in observations - why are the answers different?\\
+
+You must have finished all parts of the experiment, up to obtaining the differential gain as required in differential amplifier with active load.
+
+\subsection{Optional: Improving CMRR of differential amplifier}
+
+Add your observations of common mode gain, and how you improved the CMRR of the amplifier.
+
+\section{Questions for reflection}
+
+1. What difficulties did you face in performing the experiment?\\
+Ans. Enter answer here.
+\\\\
+2. What advantages or disadvantages did you notice for the diff-amp with active load, as compared to resistive load?\\
+Ans. Enter answer here.
+\\\\
+3. If you increase the supply voltage magnitude for the diff-amp, would the maximum output swing increase or decrease? Explain your answer.\\
+Ans. Enter answer here.
+\\\\
+4. In the simple current mirror, one can introduce "current gain" by sizing the two transistors differently. Assuming different W/L ratio for the transistors, obtain a value for this current gain. Can you suggest why this might be a better way to distribute currents in a circuit, as compared to setting up separate reference branches with separate resistors?\\
+Ans. Enter answer here.
+\\\\
+5. In class you learnt that a cascode configuration is better for large gain and low output resistance. Propose a possible circuit diagram using cascode differential amplifier, and active load, with appropriate biasing network for providing bias currents. (Only the circuit diagram made in xcircuit is expected)\\
+Ans.
+
+\end{document}

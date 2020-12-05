@@ -1,0 +1,103 @@
+|ElevenBitCounter
+clk => DFlipFlop1:dff1.CLK
+reset => DFlipFlop1:dff1.reset
+reset => DFlipFlop1:dff2.reset
+reset => DFlipFlop1:dff3.reset
+reset => DFlipFlop1:dff4.reset
+reset => DFlipFlop1:dff5.reset
+reset => DFlipFlop1:dff6.reset
+reset => DFlipFlop1:dff7.reset
+reset => DFlipFlop1:dff8.reset
+reset => DFlipFlop1:dff9.reset
+reset => DFlipFlop1:dff10.reset
+reset => DFlipFlop1:dff11.reset
+counter[0] <= DFlipFlop1:dff1.Q
+counter[1] <= DFlipFlop1:dff2.Q
+counter[2] <= DFlipFlop1:dff3.Q
+counter[3] <= DFlipFlop1:dff4.Q
+counter[4] <= DFlipFlop1:dff5.Q
+counter[5] <= DFlipFlop1:dff6.Q
+counter[6] <= DFlipFlop1:dff7.Q
+counter[7] <= DFlipFlop1:dff8.Q
+counter[8] <= DFlipFlop1:dff9.Q
+counter[9] <= DFlipFlop1:dff10.Q
+counter[10] <= DFlipFlop1:dff11.Q
+
+
+|ElevenBitCounter|DFlipFlop1:dff1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff3
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff4
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff5
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff6
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff7
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff8
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff9
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff10
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ElevenBitCounter|DFlipFlop1:dff11
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

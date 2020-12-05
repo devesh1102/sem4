@@ -1,0 +1,53 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity counter is
+  port (
+    clk,reset,start  : in std_logic;
+	 done : out std_logic;
+	 count_out: out unsigned(9 downto 0)
+  );
+end entity counter;
+
+architecture Behave of counter is
+   type RtlState is (rst, decr);
+	signal rtl_state: RtlState;
+   signal count: unsigned (9 downto 0);
+   constant Z9: unsigned (9 downto 0) := (others => '0');
+begin
+  process(clk, reset, rtl_state, start, count)
+	variable next_rtl_state: RtlState;
+	variable next_count_var: unsigned (9 downto 0);
+	variable done_var: std_logic;
+begin
+  next_rtl_state := rtl_state;
+  next_count_var := count;
+  done_var := '0';
+  case rtl_state is
+		when rst=>
+             if(start = '1') then 
+				 next_rtl_state := decr;
+				 next_count_var := (others=>'1');
+  end if;
+      when decr => 
+          if (count = Z9) then
+				 next_rtl_state := rst;
+				 done_var := '1';
+          else 
+            next_rtl_state := decr;
+            next_count_var := next_count_var - 1;
+          end if;
+end case;
+ done <= done_var;
+ 
+    if (clk'event and clk = '1') then
+	  if (reset = '1' ) then
+		rtl_state <= rst;
+      else
+         rtl_state <= next_rtl_state;
+      end if;
+      count <= next_count_var;
+		count_out <= count;
+  end if;
+   end process;
+end Behave;

@@ -1,0 +1,51 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/parth/Digital_lab_projects/Reaction game/counter/simulation/modelsim
+Eup_counter2
+Z1 w1524028559
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd
+Z6 F/home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd
+l0
+L4
+V@g9LBOnT_1a0LB>572XaM0
+!s100 2zL`cT4G^1BfM=?4aWFP52
+Z7 OV;C;10.4d;61
+31
+Z8 !s110 1524028616
+!i10b 1
+Z9 !s108 1524028616.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd|
+Z11 !s107 /home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1
+Acounter
+R2
+R3
+R4
+DEx4 work 11 up_counter2 0 22 @g9LBOnT_1a0LB>572XaM0
+l17
+L14
+VmO:^mIU^TXDAkd]5lI^MG2
+!s100 7Ei9M;<Z[RiJF3c>cag9z0
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13

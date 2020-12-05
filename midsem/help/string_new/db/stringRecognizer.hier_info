@@ -1,0 +1,1337 @@
+|TopLevel
+TDI => Scan_Chain:scan_instance.TDI
+TDO << Scan_Chain:scan_instance.TDO
+TMS => Scan_Chain:scan_instance.TMS
+TCLK => Scan_Chain:scan_instance.TCLK
+TRST => Scan_Chain:scan_instance.TRST
+
+
+|TopLevel|Scan_Chain:scan_instance
+TDI => Scan_reg:In_Reg.SI
+TDO <= Scan_reg:Out_Reg.SO
+TMS => L2_en.DATAB
+TMS => next_state.DATAB
+TMS => next_state.DATAB
+TMS => Selector2.IN2
+TMS => next_state.DATAB
+TMS => Selector3.IN1
+TMS => Selector0.IN1
+TMS => Selector1.IN1
+TCLK => Scan_reg:In_Reg.clock
+TCLK => Scan_reg:Out_Reg.clock
+TCLK => current_state~1.DATAIN
+TRST => Scan_reg:In_Reg.reset
+TRST => Scan_reg:Out_Reg.reset
+TRST => current_state~3.DATAIN
+TRST => L1_en.OUTPUTSELECT
+TRST => L2_en.OUTPUTSELECT
+TRST => cap_shft.OUTPUTSELECT
+TRST => next_state.s_idle.OUTPUTSELECT
+TRST => next_state.s_DR.OUTPUTSELECT
+TRST => next_state.s_capture.OUTPUTSELECT
+TRST => next_state.s_shift.OUTPUTSELECT
+TRST => next_state.s_update.OUTPUTSELECT
+TRST => Scan_reg:In_Reg.sel_reg
+TRST => Scan_reg:Out_Reg.sel_reg
+dut_in[0] <= Scan_reg:In_Reg.PO[0]
+dut_in[1] <= Scan_reg:In_Reg.PO[1]
+dut_in[2] <= Scan_reg:In_Reg.PO[2]
+dut_in[3] <= Scan_reg:In_Reg.PO[3]
+dut_in[4] <= Scan_reg:In_Reg.PO[4]
+dut_in[5] <= Scan_reg:In_Reg.PO[5]
+dut_in[6] <= Scan_reg:In_Reg.PO[6]
+dut_out[0] => Scan_reg:Out_Reg.PI[0]
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:In_Reg
+clock => L2[0].CLK
+clock => L2[1].CLK
+clock => L2[2].CLK
+clock => L2[3].CLK
+clock => L2[4].CLK
+clock => L2[5].CLK
+clock => L2[6].CLK
+clock => L1[0].CLK
+clock => L1[1].CLK
+clock => L1[2].CLK
+clock => L1[3].CLK
+clock => L1[4].CLK
+clock => L1[5].CLK
+clock => L1[6].CLK
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PI[1] => mux1[1].DATAB
+PI[1] => mux2.DATAB
+PI[2] => mux1[2].DATAB
+PI[2] => mux2.DATAB
+PI[3] => mux1[3].DATAB
+PI[3] => mux2.DATAB
+PI[4] => mux1[4].DATAB
+PI[4] => mux2.DATAB
+PI[5] => mux1[5].DATAB
+PI[5] => mux2.DATAB
+PI[6] => mux1[6].DATAB
+PI[6] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[1] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[2] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[3] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[4] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[5] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+PO[6] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[6].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[6].OUTPUTSELECT
+cap_shft => mux1[5].OUTPUTSELECT
+cap_shft => mux1[4].OUTPUTSELECT
+cap_shft => mux1[3].OUTPUTSELECT
+cap_shft => mux1[2].OUTPUTSELECT
+cap_shft => mux1[1].OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|Scan_Chain:scan_instance|Scan_Reg:Out_Reg
+clock => L2[0].CLK
+clock => L1[0].CLK
+reset => L1.OUTPUTSELECT
+reset => L2.OUTPUTSELECT
+PI[0] => mux1[0].DATAB
+PI[0] => mux2.DATAB
+PO[0] <= mux2.DB_MAX_OUTPUT_PORT_TYPE
+SI => mux1[0].DATAA
+SO <= L1[0].DB_MAX_OUTPUT_PORT_TYPE
+L1_en => L1.OUTPUTSELECT
+L2_en => L2.OUTPUTSELECT
+cap_shft => mux1[0].OUTPUTSELECT
+sel_reg => mux2.OUTPUTSELECT
+
+
+|TopLevel|DUT:dut2
+input_vector[0] => stringRecognizer:dut.X0
+input_vector[1] => stringRecognizer:dut.X1
+input_vector[2] => stringRecognizer:dut.X2
+input_vector[3] => stringRecognizer:dut.X3
+input_vector[4] => stringRecognizer:dut.X4
+input_vector[5] => stringRecognizer:dut.clk
+input_vector[6] => stringRecognizer:dut.reset
+output_vector[0] <= stringRecognizer:dut.W
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut
+reset => BOMB:aa.reset
+reset => KNIFE:K.reset
+reset => TERROR:T.reset
+reset => GUN:G.reset
+clk => BOMB:aa.clk
+clk => KNIFE:K.clk
+clk => TERROR:T.clk
+clk => GUN:G.clk
+X4 => BOMB:aa.X4
+X4 => KNIFE:K.X4
+X4 => TERROR:T.X4
+X4 => GUN:G.X4
+X3 => BOMB:aa.X3
+X3 => KNIFE:K.X3
+X3 => TERROR:T.X3
+X3 => GUN:G.X3
+X2 => BOMB:aa.X2
+X2 => KNIFE:K.X2
+X2 => TERROR:T.X2
+X2 => GUN:G.X2
+X1 => BOMB:aa.X1
+X1 => KNIFE:K.X1
+X1 => TERROR:T.X1
+X1 => GUN:G.X1
+X0 => BOMB:aa.X0
+X0 => KNIFE:K.X0
+X0 => TERROR:T.X0
+X0 => GUN:G.X0
+W <= W.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa
+X4 => comparator:comp.b0
+X3 => comparator:comp.b1
+X2 => comparator:comp.b2
+X1 => comparator:comp.b3
+X0 => comparator:comp.b4
+W <= W.DB_MAX_OUTPUT_PORT_TYPE
+clk => D_FF:filp0.CLK
+clk => D_FF:filp1.CLK
+reset => MUX_bit:reset0.y
+reset => MUX_bit:reset1.y
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset0
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:reset1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_1|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_2|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX:mux_3|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|comparator:comp
+a0 => c.IN0
+a1 => c.IN0
+a2 => c.IN0
+a3 => c.IN0
+a4 => c.IN0
+b0 => c.IN1
+b1 => c.IN1
+b2 => c.IN1
+b3 => c.IN1
+b4 => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:m1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|MUX_bit:m2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|D_FF:filp0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|BOMB:aa|D_FF:filp1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K
+X4 => comparator:com.b0
+X3 => comparator:com.b1
+X2 => comparator:com.b2
+X1 => comparator:com.b3
+X0 => comparator:com.b4
+W <= W.DB_MAX_OUTPUT_PORT_TYPE
+clk => D_FF:filp0.CLK
+clk => D_FF:filp1.CLK
+clk => D_FF:filp2.CLK
+reset => MUX_bit:reset0.y
+reset => MUX_bit:reset1.y
+reset => MUX_bit:reset2.y
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|D_FF:filp2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset0
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:reset2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_1|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_2|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_3|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX:mux_4|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|comparator:com
+a0 => c.IN0
+a1 => c.IN0
+a2 => c.IN0
+a3 => c.IN0
+a4 => c.IN0
+b0 => c.IN1
+b1 => c.IN1
+b2 => c.IN1
+b3 => c.IN1
+b4 => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:m0
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:m1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|KNIFE:K|MUX_bit:m2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T
+X4 => comparator:comp_1.b0
+X3 => comparator:comp_1.b1
+X2 => comparator:comp_1.b2
+X1 => comparator:comp_1.b3
+X0 => comparator:comp_1.b4
+W <= W.DB_MAX_OUTPUT_PORT_TYPE
+clk => D_FF:filp0.CLK
+clk => D_FF:filp1.CLK
+clk => D_FF:filp2.CLK
+reset => MUX_bit:reset0.y
+reset => MUX_bit:reset1.y
+reset => MUX_bit:reset2.y
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|D_FF:filp2
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset0
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:reset2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_1|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_2|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_3|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX:mux_4|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|comparator:comp_1
+a0 => c.IN0
+a1 => c.IN0
+a2 => c.IN0
+a3 => c.IN0
+a4 => c.IN0
+b0 => c.IN1
+b1 => c.IN1
+b2 => c.IN1
+b3 => c.IN1
+b4 => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:m1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:m2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|TERROR:T|MUX_bit:m3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G
+X4 => comparator:com.b0
+X3 => comparator:com.b1
+X2 => comparator:com.b2
+X1 => comparator:com.b3
+X0 => comparator:com.b4
+W <= W.DB_MAX_OUTPUT_PORT_TYPE
+clk => D_FF:filp0.CLK
+clk => D_FF:filp1.CLK
+reset => MUX_bit:reset0.y
+reset => MUX_bit:reset1.y
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|D_FF:filp0
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|D_FF:filp1
+D => Q~reg0.DATAIN
+CLK => Q~reg0.CLK
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset0
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:reset1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_1|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2
+d0 => MUX_bit:X1.c
+d1 => MUX_bit:X2.c
+d2 => MUX_bit:X3.c
+d3 => MUX_bit:X4.c
+d4 => MUX_bit:X5.c
+f0 => MUX_bit:X1.d
+f1 => MUX_bit:X2.d
+f2 => MUX_bit:X3.d
+f3 => MUX_bit:X4.d
+f4 => MUX_bit:X5.d
+y1 => MUX_bit:X1.y
+y1 => MUX_bit:X2.y
+y1 => MUX_bit:X3.y
+y1 => MUX_bit:X4.y
+y1 => MUX_bit:X5.y
+g0 <= MUX_bit:X1.c0
+g1 <= MUX_bit:X2.c0
+g2 <= MUX_bit:X3.c0
+g3 <= MUX_bit:X4.c0
+g4 <= MUX_bit:X5.c0
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X3
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X4
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX:mux_2|MUX_bit:X5
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|comparator:com
+a0 => c.IN0
+a1 => c.IN0
+a2 => c.IN0
+a3 => c.IN0
+a4 => c.IN0
+b0 => c.IN1
+b1 => c.IN1
+b2 => c.IN1
+b3 => c.IN1
+b4 => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:m1
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|DUT:dut2|stringRecognizer:dut|GUN:G|MUX_bit:m2
+c => c0.IN0
+d => c0.IN0
+Y => c0.IN1
+Y => c0.IN1
+c0 <= c0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,98 @@
+|test_game1
+clk => up_counter2:counter1.clk
+clk => turn[0].CLK
+clk => turn[1].CLK
+clk => turn[2].CLK
+clk => turn[3].CLK
+clk => up_counter2:counter2.clk
+clk => rand_gen:randgen.clk
+clk => button:react_button.clk
+clk => button:master_reset_button.clk
+clk => rtl_state~1.DATAIN
+mreset => button:master_reset_button.click
+react => trig.IN1
+react => button:react_button.click
+led << led.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_game1|up_counter2:counter1
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => rtl_state.CLK
+reset => rtl_state.OUTPUTSELECT
+start => next_rtl_state.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+done <= done_var.DB_MAX_OUTPUT_PORT_TYPE
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_game1|up_counter2:counter2
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => rtl_state.CLK
+reset => rtl_state.OUTPUTSELECT
+start => next_rtl_state.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+start => next_count_var.OUTPUTSELECT
+done <= done_var.DB_MAX_OUTPUT_PORT_TYPE
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_game1|rand_gen:randgen
+trigger => rand[0]~reg0.CLK
+trigger => rand[1]~reg0.CLK
+trigger => rand[2]~reg0.CLK
+trigger => rand[3]~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+rand[0] <= rand[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[1] <= rand[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[2] <= rand[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rand[3] <= rand[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_game1|button:react_button
+clk => rtl_state.CLK
+clk => op~reg0.CLK
+clk => next_state.CLK
+click => process_0.IN1
+click => process_0.IN1
+click => process_0.IN1
+op <= op~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_game1|button:master_reset_button
+clk => rtl_state.CLK
+clk => op~reg0.CLK
+clk => next_state.CLK
+click => process_0.IN1
+click => process_0.IN1
+click => process_0.IN1
+op <= op~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

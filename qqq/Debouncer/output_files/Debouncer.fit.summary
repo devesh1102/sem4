@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Apr 12 23:30:09 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : Debouncer
+Top-level Entity Name : Debouncer
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 22 / 1,270 ( 2 % )
+Total pins : 4 / 114 ( 4 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

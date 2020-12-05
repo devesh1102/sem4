@@ -1,0 +1,17 @@
+*Ids-Vds and Ids-Vgs of a n-MOSFET
+.include tsmc.txt
+M1 3 2 0 0 CMOSN W=1u
+R1 3 4 12.5k
+VDD 4 0 DC 10v
+VGG 2 1 DC 4.5V
+Vin 1 0 SIN(0 10m 1k)
+
+.TRAN 0.05m 2m
+.control
+run
+plot v(3) 
+plot v(2)
+plot v(3) vs v(1)
+plot deriv(v(3))/deriv(v(1))
+.endc
+.end

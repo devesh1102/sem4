@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Apr  5 16:20:44 2018
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : ReactionGame
+Top-level Entity Name : ElevenBitCounter
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 11 / 1,270 ( < 1 % )
+Total pins : 13 / 114 ( 11 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

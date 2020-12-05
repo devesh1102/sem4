@@ -1,0 +1,21 @@
+*Compute high frequency response
+Vi  1 0 AC 0.01 DC 0
+Ri  1 2 1k
+Cgs 2 0 10p
+Cgd 2 3 1p
+r0  3 0 50k
+Cd  3 4 0.001p
+Rd  4 0 10k
+Gm  3 0 2 0 0.002
+
+*defining the run-time control functions
+*.AC DEC 20 10Meg 1Gig
+.AC DEC 20 10k 100G
+.control
+
+run
+*plot (log10(I(V0))-log10(I(Vin)))
+plot 20*(log10(V(4))-log10(V(1)))
+
+.endc
+.end

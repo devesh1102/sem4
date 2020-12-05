@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/geek-at-work/Digital/Lab_Debouncer/Dividebyfour.vhd}
+vcom -93 -work work {/home/geek-at-work/Digital/Lab_Debouncer/DFF.vhd}
+vcom -93 -work work {/home/geek-at-work/Digital/Lab_Debouncer/Dividebytwo.vhd}
+

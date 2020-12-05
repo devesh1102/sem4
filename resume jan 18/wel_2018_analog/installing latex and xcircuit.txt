@@ -1,0 +1,100 @@
+
+	//////////////////////////////////////
+	//	to install Latex	//////
+	/////////////////////////////////////
+
+commands to install latex,go to terminal and type one of these 
+       __________________________ 
+1.    | apt-get install texlive  |
+      |__________________________|  
+or
+       ______________________________
+2.    |	sudo apt-get install texlive |
+      |______________________________|	
+-----------------------
+you would also need to install certain packages are not preinstalled with texlive
+
+the following package is needed to be installed to use symbols (example -ohm) in latex
+
+      ______________________________________________
+     |   sudo apt-get install texlive-science       |
+     |______________________________________________|
+-------------------------     
+once installed, create your latex file in any text editor with file name
+extension ".tex" (example  "lab1.tex")
+-----------------------
+to run the file ,go to terminal and type
+      ___________________
+     |	latex lab1.tex   |
+     |___________________|
+------------------------
+to view the file, type in terminal
+       ________________
+      | xdvi lab1.tex  |
+      |________________|	
+or , you can first create the pdf file by typing in terminal,
+       ____________________	
+      | pdflatex lab1.tex  |
+      |____________________|
+
+And see the output pdf file on the path where terminal is working.
+-------------------------
+
+/////////////////////////////////////////////////////
+///   to install circuitikz package in latex    /////
+/////////////////////////////////////////////////////
+
+ circuitikz package can be used to make circuit diagrams in latex
+ directly by using the text editor(similar to the way circuit is 
+ defined in ngspice)
+
+Create a personal texmf tree in home directory(Only for the first time when installing a package), 
+  __________
+ |   cd ~   |
+ |__________|
+ 
+  _____________________________
+ |  mkdir -p texmf/tex/latex/  |
+ |_____________________________|
+
+The package zip file can be downloaded from this link
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\  mirrors.ctan.org/graphics/pgf/contrib/circuitikz.zip          \
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Now unzip the package by typing
+  _________________________
+ | gunzip circuitikz.zip   |
+ |_________________________|
+ 
+ Move the unzipped ‘circuitikz’ directory to ~/texmf/tex/latex/  by typing this in the terminal
+  _____________________________________
+ | mv circuitikz ~/texmf/tex/latex/    |
+ |_____________________________________|
+ 
+Now, make LaTeX to recognize the new package: 
+   ____________________
+  |   texhash ~/texmf  |
+  |____________________|
+  
+------------------------ 		
+ ////////////////////////////////////////
+ ////    to install xcircuit      ///////
+ ///////////////////////////////////////
+ 
+ open terminal and type the command
+       __________________________________
+      |  sudo apt-get install xcircuit   |
+      |__________________________________|
+      
+ to run xcircuit,just open the terminal and type 
+ 	 __________________
+ 	|   xcircuit       |   
+        |__________________|
+        
+        
+        
+        
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    
+      
+      

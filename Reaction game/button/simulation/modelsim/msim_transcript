@@ -1,0 +1,63 @@
+# ERROR: No extended dataflow license exists
+# do button_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/parth/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/parth/Digital_lab_projects/Reaction game/button/button.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 00:26:30 on Apr 15,2018
+# vcom -reportprogress 300 -93 -work work /home/parth/Digital_lab_projects/Reaction game/button/button.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity button
+# -- Compiling architecture button_arch of button
+# End time: 00:26:30 on Apr 15,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.button
+# vsim work.button 
+# Start time: 00:26:33 on Apr 15,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.button(button_arch)
+add wave -position insertpoint  \
+sim:/button/click
+add wave -position insertpoint  \
+sim:/button/clk
+add wave -position insertpoint  \
+sim:/button/op
+add wave -position insertpoint  \
+sim:/button/rtl_state
+force -freeze sim:/button/clk 1 0ns, 0 {5000 ps} -r 10ns
+noforce sim:/button/click
+force -freeze sim:/button/click 0 0
+run
+force -freeze sim:/button/click 1 0
+run
+run
+run
+force -freeze sim:/button/click 0 0
+run
+run
+run
+force -freeze sim:/button/click 1 0
+run
+run
+run
+force -freeze sim:/button/click 0 0
+run
+# End time: 00:28:45 on Apr 15,2018, Elapsed time: 0:02:12
+# Errors: 0, Warnings: 0

@@ -1,0 +1,31 @@
+Simulation of differential amplifier with passive load
+*Model file for ALD1106 and ALD1107
+*SPICE Level 1
+*Created by: Debapratim Ghosh, IIT Bombay
+*Date: 12 Dec 2013
+
+.MODEL ALD1106 NMOS (LEVEL=1 CBD=0.5p CBS=0.5p CGDO=0.1p CGSO=0.1p GAMMA=.85
++ KP=519.2u L=10E-6 LAMBDA=0.029 PHI=.9 VTO=0.8 W=20E-6)
+
+.MODEL ALD1107 PMOS (LEVEL=1 CBD=0.5p CBS=0.5p CGDO=0.1p CGSO=0.1p GAMMA=.45
++ KP=206u L=10E-6 LAMBDA=0.0304 PHI=.8 VTO=-0.82 W=20E-6)
+
+ma1 1 in1 3 8 ald1106
+ma2 4 gnd 3 8 ald1106
+rd1 7 1 9.71k
+rd2 7 4 9.71k
+mc1 3 6 8 8 ald1106
+mc2 6 6 8 8 ald1106
+r1 7 6 6.2k
+vdd 7 gnd dc 4.5
+vss 8 gnd dc -4.5
+vin in1 gnd sin(0 50m 10k 0 0)
+
+.control
+tran 0.001ms 0.5ms
+
+run
+plot (v(1)-v(4)) v(in1)
+.endc
+
+.end

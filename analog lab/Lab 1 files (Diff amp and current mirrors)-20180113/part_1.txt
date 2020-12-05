@@ -1,0 +1,34 @@
+*Model file for ALD1106 and ALD1107
+*SPICE Level 1
+*Created by: Debapratim Ghosh, IIT Bombay
+*Date: 12 Dec 2013
+
+.MODEL ALD1106 NMOS (LEVEL=1 CBD=0.5p CBS=0.5p CGDO=0.1p CGSO=0.1p GAMMA=.85
++ KP=479u L=10E-6 LAMBDA=0.029 PHI=.9 VTO=0.8 W=20E-6)
+
+.MODEL ALD1107 PMOS (LEVEL=1 CBD=0.5p CBS=0.5p CGDO=0.1p CGSO=0.1p GAMMA=.45
++ KP=206u L=10E-6 LAMBDA=0.0304 PHI=.8 VTO=-0.82 W=20E-6)
+
+
+
+M1 1 2 3 7 ALD1106 
+M2 4 6 3 7  ALD1106 
+M3 8 8 7 7 ALD1106 
+M4 3 8 7 7  ALD1106 
+VSS 7 0 -4.5v
+VDD 5 0 4.5v
+rd1 1 5 9.7k
+rd2 4 5 9.7k
+rvar 8 5 6.923k
+
+
+Vin 2 0 SIN(0 50m 1k)
+r3 0 6 0k
+
+.TRAN 0.05m 2m
+.control
+run
+plot v(1)-v(4) 
+plot v(2)
+.endc
+.end

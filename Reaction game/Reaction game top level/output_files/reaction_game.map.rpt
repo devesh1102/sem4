@@ -1,0 +1,402 @@
+Analysis & Synthesis report for reaction_game
+Wed Apr 18 22:05:16 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |reaction_game|rtl_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |reaction_game
+ 15. Parameter Settings for User Entity Instance: clk_1ms:clock_1ms
+ 16. Parameter Settings for User Entity Instance: rand_gen:randgen
+ 17. Port Connectivity Checks: "counter3:counter2"
+ 18. Port Connectivity Checks: "counter3:counter1"
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Apr 18 22:05:16 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name               ; reaction_game                               ;
+; Top-level Entity Name       ; reaction_game                               ;
+; Family                      ; MAX V                                       ;
+; Total logic elements        ; 146                                         ;
+; Total pins                  ; 6                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; reaction_game      ; reaction_game      ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+; ../counter/counter3.vhd          ; yes             ; User VHDL File  ; /home/parth/Digital_lab_projects/Reaction game/counter/counter3.vhd                      ;         ;
+; ../button/button.vhd             ; yes             ; User VHDL File  ; /home/parth/Digital_lab_projects/Reaction game/button/button.vhd                         ;         ;
+; reaction_game.vhd                ; yes             ; User VHDL File  ; /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd ;         ;
+; ../random_gen/rand_gen.vhd       ; yes             ; User VHDL File  ; /home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd                   ;         ;
+; clk_1ms.vhd                      ; yes             ; User VHDL File  ; /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd       ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Total logic elements                        ; 146                       ;
+;     -- Combinational with no register       ; 54                        ;
+;     -- Register only                        ; 13                        ;
+;     -- Combinational with a register        ; 79                        ;
+;                                             ;                           ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 42                        ;
+;     -- 3 input functions                    ; 13                        ;
+;     -- 2 input functions                    ; 51                        ;
+;     -- 1 input functions                    ; 27                        ;
+;     -- 0 input functions                    ; 0                         ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 102                       ;
+;     -- arithmetic mode                      ; 44                        ;
+;     -- qfbk mode                            ; 0                         ;
+;     -- register cascade mode                ; 0                         ;
+;     -- synchronous clear/load mode          ; 39                        ;
+;     -- asynchronous clear/load mode         ; 0                         ;
+;                                             ;                           ;
+; Total registers                             ; 92                        ;
+; Total logic cells in carry chains           ; 48                        ;
+; I/O pins                                    ; 6                         ;
+; Maximum fan-out node                        ; clk_1ms:clock_1ms|clk_out ;
+; Maximum fan-out                             ; 56                        ;
+; Total fan-out                               ; 504                       ;
+; Average fan-out                             ; 3.32                      ;
++---------------------------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node      ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                       ; Entity Name   ; Library Name ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
+; |reaction_game                  ; 146 (40)    ; 92           ; 0          ; 6    ; 0            ; 54 (25)      ; 13 (2)            ; 79 (13)          ; 48 (0)          ; 0 (0)      ; |reaction_game                            ; reaction_game ; work         ;
+;    |button:master_reset_button| ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |reaction_game|button:master_reset_button ; button        ; work         ;
+;    |button:react_button|        ; 2 (2)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |reaction_game|button:react_button        ; button        ; work         ;
+;    |clk_1ms:clock_1ms|          ; 28 (28)     ; 17           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 17 (17)          ; 16 (16)         ; 0 (0)      ; |reaction_game|clk_1ms:clock_1ms          ; clk_1ms       ; work         ;
+;    |counter3:counter1|          ; 27 (27)     ; 23           ; 0          ; 0    ; 0            ; 4 (4)        ; 11 (11)           ; 12 (12)          ; 11 (11)         ; 0 (0)      ; |reaction_game|counter3:counter1          ; counter3      ; work         ;
+;    |counter3:counter2|          ; 17 (17)     ; 13           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 13 (13)          ; 11 (11)         ; 0 (0)      ; |reaction_game|counter3:counter2          ; counter3      ; work         ;
+;    |rand_gen:randgen|           ; 30 (30)     ; 20           ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 20 (20)          ; 10 (10)         ; 0 (0)      ; |reaction_game|rand_gen:randgen           ; rand_gen      ; work         ;
++---------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------+
+; State Machine - |reaction_game|rtl_state                                  ;
++-------------------+-------------------+------------------+----------------+
+; Name              ; rtl_state.LED_OFF ; rtl_state.LED_ON ; rtl_state.HALT ;
++-------------------+-------------------+------------------+----------------+
+; rtl_state.HALT    ; 0                 ; 0                ; 0              ;
+; rtl_state.LED_ON  ; 0                 ; 1                ; 1              ;
+; rtl_state.LED_OFF ; 1                 ; 0                ; 1              ;
++-------------------+-------------------+------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; clk_1ms:clock_1ms|clk_out                          ; clk_1ms:clock_1ms|clk_out ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                       ;
++---------------------------------------+--------------------------------------------------+
+; Register name                         ; Reason for Removal                               ;
++---------------------------------------+--------------------------------------------------+
+; button:master_reset_button|next_state ; Merged with button:master_reset_button|rtl_state ;
+; button:react_button|next_state        ; Merged with button:react_button|rtl_state        ;
+; Total Number of Removed Registers = 2 ;                                                  ;
++---------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 38    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; rand_gen:randgen|count[9]               ; 2       ;
+; rand_gen:randgen|count[8]               ; 2       ;
+; rand_gen:randgen|count[1]               ; 2       ;
+; rand_gen:randgen|count[0]               ; 3       ;
+; rand_gen:randgen|count[3]               ; 2       ;
+; rand_gen:randgen|count[2]               ; 2       ;
+; rand_gen:randgen|count[5]               ; 2       ;
+; rand_gen:randgen|count[4]               ; 2       ;
+; rand_gen:randgen|count[7]               ; 2       ;
+; rand_gen:randgen|count[6]               ; 2       ;
+; Total number of inverted registers = 10 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |reaction_game|counter3:counter2|count[2] ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |reaction_game|counter3:counter1|count[5] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |reaction_game|turn[0]                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |reaction_game|rc2                        ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 10 LEs               ; 6 LEs                  ; No         ; |reaction_game|Selector9                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |reaction_game ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; COUNT_BITS     ; 10    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_1ms:clock_1ms ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; CLK_BIT        ; 15    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rand_gen:randgen ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; CLK_BIT        ; 9     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter3:counter2"                                                                                               ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity         ; Details                                                                                             ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
+; count_out ; Output ; Critical Warning ; Port on prototype, e.g. VHDL component, declared as "Bidir" but port on entity declared as "Output" ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter3:counter1"                                                                                               ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity         ; Details                                                                                             ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+; done      ; Output ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                 ;
+; count_out ; Output ; Critical Warning ; Port on prototype, e.g. VHDL component, declared as "Bidir" but port on entity declared as "Output" ;
++-----------+--------+------------------+-----------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Wed Apr 18 22:05:00 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off reaction_game -c reaction_game
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /home/parth/Digital_lab_projects/Reaction game/counter/counter3.vhd
+    Info (12022): Found design unit 1: counter3-Behave File: /home/parth/Digital_lab_projects/Reaction game/counter/counter3.vhd Line: 12
+    Info (12023): Found entity 1: counter3 File: /home/parth/Digital_lab_projects/Reaction game/counter/counter3.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file test_game1.vhd
+    Info (12022): Found design unit 1: test_game1-core File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/test_game1.vhd Line: 14
+    Info (12023): Found entity 1: test_game1 File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/test_game1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/parth/Digital_lab_projects/Reaction game/button/button.vhd
+    Info (12022): Found design unit 1: button-button_arch File: /home/parth/Digital_lab_projects/Reaction game/button/button.vhd Line: 12
+    Info (12023): Found entity 1: button File: /home/parth/Digital_lab_projects/Reaction game/button/button.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd
+    Info (12022): Found design unit 1: up_counter2-counter File: /home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd Line: 14
+    Info (12023): Found entity 1: up_counter2 File: /home/parth/Digital_lab_projects/Reaction game/counter/up_counter2.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file reaction_game.vhd
+    Info (12022): Found design unit 1: reaction_game-core File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 14
+    Info (12023): Found entity 1: reaction_game File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd
+    Info (12022): Found design unit 1: rand_gen-Behave File: /home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd Line: 13
+    Info (12023): Found entity 1: rand_gen File: /home/parth/Digital_lab_projects/Reaction game/random_gen/rand_gen.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file clk_1ms.vhd
+    Info (12022): Found design unit 1: clk_1ms-counter File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 12
+    Info (12023): Found entity 1: clk_1ms File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 4
+Info (12127): Elaborating entity "reaction_game" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at reaction_game.vhd(48): object "done_c1" assigned a value but never read File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(83): signal "score" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(102): signal "soft_reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(126): signal "count1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(126): signal "random" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(147): signal "score" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(147): signal "count2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at reaction_game.vhd(155): signal "clock" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 155
+Info (12128): Elaborating entity "clk_1ms" for hierarchy "clk_1ms:clock_1ms" File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 57
+Warning (10631): VHDL Process Statement warning at clk_1ms.vhd(17): inferring latch(es) for signal or variable "clk_out", which holds its previous value in one or more paths through the process File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 17
+Info (10041): Inferred latch for "clk_out" at clk_1ms.vhd(17) File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 17
+Info (12128): Elaborating entity "counter3" for hierarchy "counter3:counter1" File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 63
+Info (12128): Elaborating entity "rand_gen" for hierarchy "rand_gen:randgen" File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 65
+Info (12128): Elaborating entity "button" for hierarchy "button:react_button" File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/reaction_game.vhd Line: 66
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch clk_1ms:clock_1ms|clk_out has unsafe behavior File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clk_1ms:clock_1ms|count[15] File: /home/parth/Digital_lab_projects/Reaction game/Reaction game top level/clk_1ms.vhd Line: 36
+Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 3 output pins
+    Info (21061): Implemented 146 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 1234 megabytes
+    Info: Processing ended: Wed Apr 18 22:05:16 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:26
+
+

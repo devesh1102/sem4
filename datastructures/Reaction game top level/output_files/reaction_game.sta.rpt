@@ -1,0 +1,757 @@
+TimeQuest Timing Analyzer report for reaction_game
+Sun Apr 15 01:46:04 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'button:master_reset_button|op'
+ 13. Setup: 'rtl_state.HALT'
+ 14. Hold: 'button:master_reset_button|op'
+ 15. Hold: 'rtl_state.HALT'
+ 16. Hold: 'clk'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Report TCCS
+ 20. Report RSKM
+ 21. Unconstrained Paths Summary
+ 22. Clock Status Summary
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; reaction_game                                       ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                       ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; Clock Name                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                           ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; button:master_reset_button|op ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { button:master_reset_button|op } ;
+; clk                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                           ;
+; rtl_state.HALT                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { rtl_state.HALT }                ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+
+
++---------------------------------------------------------------------+
+; Fmax Summary                                                        ;
++------------+-----------------+-------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note ;
++------------+-----------------+-------------------------------+------+
+; 66.26 MHz  ; 66.26 MHz       ; button:master_reset_button|op ;      ;
+; 104.96 MHz ; 104.96 MHz      ; clk                           ;      ;
++------------+-----------------+-------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------+
+; Setup Summary                                           ;
++-------------------------------+---------+---------------+
+; Clock                         ; Slack   ; End Point TNS ;
++-------------------------------+---------+---------------+
+; clk                           ; -12.196 ; -158.212      ;
+; button:master_reset_button|op ; -7.270  ; -32.958       ;
+; rtl_state.HALT                ; -2.259  ; -7.351        ;
++-------------------------------+---------+---------------+
+
+
++--------------------------------------------------------+
+; Hold Summary                                           ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; button:master_reset_button|op ; -5.368 ; -25.519       ;
+; rtl_state.HALT                ; -1.634 ; -5.249        ;
+; clk                           ; -1.600 ; -2.494        ;
++-------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Minimum Pulse Width Summary                            ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clk                           ; -2.289 ; -2.289        ;
+; button:master_reset_button|op ; 0.234  ; 0.000         ;
+; rtl_state.HALT                ; 0.500  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                           ;
++---------+-----------------------------------+-------------------+-------------------------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                         ; To Node           ; Launch Clock                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------+-------------------+-------------------------------+-------------+--------------+------------+------------+
+; -12.196 ; rand_gen:randgen|rand[1]          ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 8.539      ;
+; -12.035 ; rand_gen:randgen|rand[0]          ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 8.378      ;
+; -11.594 ; rand_gen:randgen|rand[2]          ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.937      ;
+; -11.559 ; rand_gen:randgen|rand[2]          ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.902      ;
+; -11.332 ; rand_gen:randgen|rand[1]          ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.675      ;
+; -11.209 ; rand_gen:randgen|rand[2]          ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.552      ;
+; -11.171 ; rand_gen:randgen|rand[0]          ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.514      ;
+; -11.170 ; trn[1]                            ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 6.561      ;
+; -11.084 ; rand_gen:randgen|rand[3]          ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.427      ;
+; -11.049 ; rand_gen:randgen|rand[3]          ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.392      ;
+; -11.015 ; trn[0]                            ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 6.402      ;
+; -10.982 ; rand_gen:randgen|rand[1]          ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.325      ;
+; -10.821 ; rand_gen:randgen|rand[0]          ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.164      ;
+; -10.801 ; trn[1]                            ; rtl_state.LED_ON  ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 6.561      ;
+; -10.799 ; trn[3]                            ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 6.259      ;
+; -10.764 ; trn[3]                            ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 6.224      ;
+; -10.699 ; rand_gen:randgen|rand[3]          ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 1.000        ; -4.324     ; 7.042      ;
+; -10.673 ; trn[1]                            ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 6.064      ;
+; -10.646 ; trn[0]                            ; rtl_state.LED_ON  ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 6.402      ;
+; -10.627 ; trn[1]                            ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 6.018      ;
+; -10.518 ; trn[0]                            ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.905      ;
+; -10.487 ; trn[2]                            ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.879      ;
+; -10.472 ; trn[0]                            ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.859      ;
+; -10.430 ; trn[3]                            ; rtl_state.HALT    ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 6.259      ;
+; -10.414 ; trn[3]                            ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 5.874      ;
+; -10.395 ; trn[3]                            ; rtl_state.LED_OFF ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 6.224      ;
+; -10.312 ; trn[1]                            ; turn[3]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 5.703      ;
+; -10.310 ; trn[1]                            ; turn[0]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 5.701      ;
+; -10.309 ; trn[1]                            ; turn[2]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 5.700      ;
+; -10.305 ; trn[1]                            ; turn[1]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.776     ; 5.696      ;
+; -10.304 ; trn[1]                            ; rtl_state.HALT    ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 6.064      ;
+; -10.258 ; trn[1]                            ; rtl_state.LED_OFF ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 6.018      ;
+; -10.157 ; trn[0]                            ; turn[3]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.544      ;
+; -10.155 ; trn[0]                            ; turn[0]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.542      ;
+; -10.154 ; trn[0]                            ; turn[2]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.541      ;
+; -10.150 ; trn[0]                            ; turn[1]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.780     ; 5.537      ;
+; -10.149 ; trn[0]                            ; rtl_state.HALT    ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.905      ;
+; -10.118 ; trn[2]                            ; rtl_state.LED_ON  ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.879      ;
+; -10.103 ; trn[0]                            ; rtl_state.LED_OFF ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.859      ;
+; -10.045 ; trn[3]                            ; rtl_state.LED_ON  ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 5.874      ;
+; -9.990  ; trn[2]                            ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.382      ;
+; -9.944  ; trn[2]                            ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.336      ;
+; -9.943  ; trn[1]                            ; turn[3]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 5.703      ;
+; -9.941  ; trn[1]                            ; turn[0]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 5.701      ;
+; -9.940  ; trn[1]                            ; turn[2]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 5.700      ;
+; -9.936  ; trn[1]                            ; turn[1]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.407     ; 5.696      ;
+; -9.788  ; trn[0]                            ; turn[3]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.544      ;
+; -9.786  ; trn[0]                            ; turn[0]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.542      ;
+; -9.785  ; trn[0]                            ; turn[2]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.541      ;
+; -9.781  ; trn[0]                            ; turn[1]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.411     ; 5.537      ;
+; -9.729  ; next_rtl_state.LED_OFF_288        ; rtl_state.LED_OFF ; button:master_reset_button|op ; clk         ; 0.500        ; -5.442     ; 4.454      ;
+; -9.629  ; trn[2]                            ; turn[3]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.021      ;
+; -9.627  ; trn[2]                            ; turn[0]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.019      ;
+; -9.626  ; trn[2]                            ; turn[2]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.018      ;
+; -9.622  ; trn[2]                            ; turn[1]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.775     ; 5.014      ;
+; -9.621  ; trn[2]                            ; rtl_state.HALT    ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.382      ;
+; -9.575  ; trn[2]                            ; rtl_state.LED_OFF ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.336      ;
+; -9.534  ; trn[3]                            ; turn[3]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 4.994      ;
+; -9.532  ; trn[3]                            ; turn[0]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 4.992      ;
+; -9.531  ; trn[3]                            ; turn[2]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 4.991      ;
+; -9.527  ; trn[3]                            ; turn[1]           ; button:master_reset_button|op ; clk         ; 0.500        ; -4.707     ; 4.987      ;
+; -9.260  ; trn[2]                            ; turn[3]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.021      ;
+; -9.258  ; trn[2]                            ; turn[0]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.019      ;
+; -9.257  ; trn[2]                            ; turn[2]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.018      ;
+; -9.253  ; trn[2]                            ; turn[1]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.406     ; 5.014      ;
+; -9.165  ; trn[3]                            ; turn[3]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 4.994      ;
+; -9.163  ; trn[3]                            ; turn[0]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 4.992      ;
+; -9.162  ; trn[3]                            ; turn[2]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 4.991      ;
+; -9.158  ; trn[3]                            ; turn[1]           ; rtl_state.HALT                ; clk         ; 0.500        ; -4.338     ; 4.987      ;
+; -8.527  ; up_counter2:counter2|count[1]     ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 9.194      ;
+; -8.163  ; up_counter2:counter2|count[0]     ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.830      ;
+; -8.030  ; up_counter2:counter2|count[1]     ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.697      ;
+; -8.025  ; next_rtl_state.LED_ON_311         ; rtl_state.LED_ON  ; button:master_reset_button|op ; clk         ; 0.500        ; -5.264     ; 2.928      ;
+; -7.984  ; up_counter2:counter2|count[1]     ; rtl_state.LED_OFF ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.651      ;
+; -7.780  ; up_counter2:counter2|count[2]     ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.447      ;
+; -7.766  ; up_counter2:counter1|count_out[1] ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.433      ;
+; -7.671  ; up_counter2:counter2|count[1]     ; turn[3]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.338      ;
+; -7.669  ; up_counter2:counter2|count[1]     ; turn[0]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.336      ;
+; -7.668  ; up_counter2:counter2|count[1]     ; turn[2]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.335      ;
+; -7.666  ; up_counter2:counter2|count[0]     ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.333      ;
+; -7.664  ; up_counter2:counter2|count[1]     ; turn[1]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.331      ;
+; -7.620  ; up_counter2:counter2|count[0]     ; rtl_state.LED_OFF ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.287      ;
+; -7.482  ; up_counter2:counter1|count_out[3] ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.149      ;
+; -7.447  ; up_counter2:counter1|count_out[3] ; rtl_state.LED_OFF ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.114      ;
+; -7.436  ; next_rtl_state.HALT_334           ; rtl_state.HALT    ; button:master_reset_button|op ; clk         ; 0.500        ; -5.300     ; 2.303      ;
+; -7.333  ; up_counter2:counter2|count[3]     ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 8.000      ;
+; -7.307  ; up_counter2:counter2|count[0]     ; turn[3]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.974      ;
+; -7.305  ; up_counter2:counter2|count[0]     ; turn[0]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.972      ;
+; -7.304  ; up_counter2:counter2|count[0]     ; turn[2]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.971      ;
+; -7.300  ; up_counter2:counter2|count[0]     ; turn[1]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.967      ;
+; -7.283  ; up_counter2:counter2|count[2]     ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.950      ;
+; -7.237  ; up_counter2:counter2|count[2]     ; rtl_state.LED_OFF ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.904      ;
+; -7.207  ; up_counter2:counter2|rtl_state    ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.874      ;
+; -7.097  ; up_counter2:counter1|count_out[3] ; rtl_state.LED_ON  ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.764      ;
+; -6.924  ; up_counter2:counter2|count[2]     ; turn[3]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.591      ;
+; -6.922  ; up_counter2:counter2|count[2]     ; turn[0]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.589      ;
+; -6.921  ; up_counter2:counter2|count[2]     ; turn[2]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.588      ;
+; -6.917  ; up_counter2:counter2|count[2]     ; turn[1]           ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.584      ;
+; -6.902  ; up_counter2:counter1|count_out[1] ; rtl_state.LED_OFF ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.569      ;
+; -6.836  ; up_counter2:counter2|count[3]     ; rtl_state.HALT    ; clk                           ; clk         ; 1.000        ; 0.000      ; 7.503      ;
++---------+-----------------------------------+-------------------+-------------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'button:master_reset_button|op'                                                                                                                                           ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; -7.270 ; trn[3]                            ; soft_reset                 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; -3.713     ; 2.581      ;
+; -7.046 ; rand_gen:randgen|rand[1]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.976      ; 6.555      ;
+; -6.901 ; trn[3]                            ; soft_reset                 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; -3.344     ; 2.581      ;
+; -6.885 ; rand_gen:randgen|rand[0]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.976      ; 6.394      ;
+; -6.766 ; rand_gen:randgen|rand[1]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.940      ; 6.025      ;
+; -6.605 ; rand_gen:randgen|rand[0]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.940      ; 5.864      ;
+; -6.367 ; trn[1]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.666      ; 6.365      ;
+; -6.212 ; trn[0]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.662      ; 6.206      ;
+; -6.002 ; rand_gen:randgen|rand[2]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.976      ; 5.511      ;
+; -5.998 ; trn[1]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 1.035      ; 6.365      ;
+; -5.843 ; trn[0]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 1.031      ; 6.206      ;
+; -5.766 ; rand_gen:randgen|rand[2]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.940      ; 5.025      ;
+; -5.684 ; trn[2]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.667      ; 5.683      ;
+; -5.635 ; trn[1]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.524      ; 5.192      ;
+; -5.589 ; trn[3]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.735      ; 5.656      ;
+; -5.492 ; rand_gen:randgen|rand[3]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.976      ; 5.001      ;
+; -5.480 ; trn[0]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.520      ; 5.033      ;
+; -5.315 ; trn[2]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 1.036      ; 5.683      ;
+; -5.266 ; trn[1]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 0.893      ; 5.192      ;
+; -5.256 ; rand_gen:randgen|rand[3]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 0.940      ; 4.515      ;
+; -5.220 ; trn[3]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 1.104      ; 5.656      ;
+; -5.111 ; trn[0]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 0.889      ; 5.033      ;
+; -4.952 ; trn[2]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.525      ; 4.510      ;
+; -4.857 ; trn[3]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.593      ; 4.483      ;
+; -4.724 ; up_counter2:counter2|count[1]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 8.998      ;
+; -4.583 ; trn[2]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 0.894      ; 4.510      ;
+; -4.488 ; trn[3]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 0.962      ; 4.483      ;
+; -4.360 ; up_counter2:counter2|count[0]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 8.634      ;
+; -4.224 ; trn[3]                            ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 0.557      ; 3.600      ;
+; -3.992 ; up_counter2:counter2|count[1]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 7.825      ;
+; -3.977 ; up_counter2:counter2|count[2]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 8.251      ;
+; -3.855 ; trn[3]                            ; next_rtl_state.LED_ON_311  ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 0.926      ; 3.600      ;
+; -3.628 ; up_counter2:counter2|count[0]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 7.461      ;
+; -3.530 ; up_counter2:counter2|count[3]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 7.804      ;
+; -3.464 ; rtl_state.LED_OFF                 ; soft_reset                 ; clk                           ; button:master_reset_button|op ; 0.500        ; 0.994      ; 2.982      ;
+; -3.404 ; up_counter2:counter2|rtl_state    ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 7.678      ;
+; -3.245 ; up_counter2:counter2|count[2]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 7.078      ;
+; -2.905 ; rtl_state.LED_ON                  ; soft_reset                 ; clk                           ; button:master_reset_button|op ; 0.500        ; 0.994      ; 2.423      ;
+; -2.798 ; up_counter2:counter2|count[3]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 6.631      ;
+; -2.672 ; up_counter2:counter2|rtl_state    ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 6.505      ;
+; -2.616 ; up_counter2:counter1|count_out[1] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 6.449      ;
+; -2.598 ; button:react_button|op            ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 6.872      ;
+; -2.336 ; up_counter2:counter1|count_out[1] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.264      ; 5.919      ;
+; -1.890 ; turn[0]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.707      ; 5.255      ;
+; -1.890 ; up_counter2:counter1|count_out[3] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 5.723      ;
+; -1.866 ; button:react_button|op            ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 5.699      ;
+; -1.719 ; turn[2]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.707      ; 5.084      ;
+; -1.676 ; rtl_state.LED_ON                  ; trn[3]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.707      ; 5.041      ;
+; -1.654 ; up_counter2:counter1|count_out[3] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.264      ; 5.237      ;
+; -1.526 ; turn[3]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.707      ; 4.891      ;
+; -1.320 ; rtl_state.LED_ON                  ; trn[0]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.780      ; 4.925      ;
+; -1.284 ; rtl_state.LED_ON                  ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 5.117      ;
+; -1.280 ; rtl_state.LED_ON                  ; trn[1]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.776      ; 4.892      ;
+; -1.176 ; turn[1]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.707      ; 4.541      ;
+; -1.101 ; up_counter2:counter1|count_out[0] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 4.934      ;
+; -1.019 ; rtl_state.LED_ON                  ; trn[2]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.775      ; 4.612      ;
+; -0.821 ; up_counter2:counter1|count_out[0] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.264      ; 4.404      ;
+; -0.638 ; up_counter2:counter1|count_out[2] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.300      ; 4.471      ;
+; -0.600 ; turn[0]                           ; trn[0]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.780      ; 4.205      ;
+; -0.557 ; turn[0]                           ; trn[1]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.776      ; 4.169      ;
+; -0.503 ; rtl_state.LED_OFF                 ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.264      ; 4.086      ;
+; -0.465 ; rtl_state.LED_ON                  ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.442      ; 4.739      ;
+; -0.402 ; up_counter2:counter1|count_out[2] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; 0.500        ; 5.264      ; 3.985      ;
+; -0.362 ; turn[1]                           ; trn[1]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.776      ; 3.974      ;
+; 0.062  ; turn[1]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.775      ; 3.531      ;
+; 0.079  ; turn[0]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.775      ; 3.514      ;
+; 0.250  ; turn[2]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.775      ; 3.343      ;
+; 1.136  ; rtl_state.LED_ON                  ; rst_c2                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.813      ; 2.333      ;
+; 1.180  ; rtl_state.LED_OFF                 ; rst_c1                     ; clk                           ; button:master_reset_button|op ; 0.500        ; 4.809      ; 1.923      ;
+; 2.603  ; button:master_reset_button|op     ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 9.119      ; 5.425      ;
+; 2.647  ; rtl_state.HALT                    ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.500        ; 9.119      ; 5.381      ;
+; 2.713  ; rand_gen:randgen|count[2]         ; rand_gen:randgen|rand[2]   ; clk                           ; button:master_reset_button|op ; 1.000        ; 4.324      ; 2.278      ;
+; 2.722  ; rand_gen:randgen|count[1]         ; rand_gen:randgen|rand[1]   ; clk                           ; button:master_reset_button|op ; 1.000        ; 4.324      ; 2.269      ;
+; 2.723  ; button:master_reset_button|op     ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.500        ; 9.261      ; 5.746      ;
+; 2.788  ; rand_gen:randgen|count[0]         ; rand_gen:randgen|rand[0]   ; clk                           ; button:master_reset_button|op ; 1.000        ; 4.324      ; 2.203      ;
+; 2.798  ; rand_gen:randgen|count[3]         ; rand_gen:randgen|rand[3]   ; clk                           ; button:master_reset_button|op ; 1.000        ; 4.324      ; 2.193      ;
+; 3.103  ; button:master_reset_button|op     ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 9.119      ; 5.425      ;
+; 3.147  ; rtl_state.HALT                    ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 9.119      ; 5.381      ;
+; 3.223  ; button:master_reset_button|op     ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 1.000        ; 9.261      ; 5.746      ;
+; 4.200  ; rtl_state.HALT                    ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.500        ; 9.261      ; 4.269      ;
+; 4.700  ; rtl_state.HALT                    ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 1.000        ; 9.261      ; 4.269      ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Setup: 'rtl_state.HALT'                                                                                        ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node  ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+; -2.259 ; turn[0]           ; trn[3]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.338      ; 5.255      ;
+; -2.088 ; turn[2]           ; trn[3]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.338      ; 5.084      ;
+; -2.045 ; rtl_state.LED_ON  ; trn[3]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.338      ; 5.041      ;
+; -1.895 ; turn[3]           ; trn[3]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.338      ; 4.891      ;
+; -1.689 ; rtl_state.LED_ON  ; trn[0]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.411      ; 4.925      ;
+; -1.649 ; rtl_state.LED_ON  ; trn[1]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.407      ; 4.892      ;
+; -1.545 ; turn[1]           ; trn[3]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.338      ; 4.541      ;
+; -1.388 ; rtl_state.LED_ON  ; trn[2]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.406      ; 4.612      ;
+; -0.969 ; turn[0]           ; trn[0]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.411      ; 4.205      ;
+; -0.926 ; turn[0]           ; trn[1]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.407      ; 4.169      ;
+; -0.731 ; turn[1]           ; trn[1]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.407      ; 3.974      ;
+; -0.366 ; rtl_state.LED_ON  ; start_c1 ; clk          ; rtl_state.HALT ; 0.500        ; 3.838      ; 2.466      ;
+; -0.307 ; turn[1]           ; trn[2]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.406      ; 3.531      ;
+; -0.290 ; turn[0]           ; trn[2]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.406      ; 3.514      ;
+; -0.119 ; turn[2]           ; trn[2]   ; clk          ; rtl_state.HALT ; 0.500        ; 4.406      ; 3.343      ;
+; 0.043  ; rtl_state.LED_ON  ; rst_c2   ; clk          ; rtl_state.HALT ; 0.500        ; 3.720      ; 2.333      ;
+; 0.087  ; rtl_state.LED_OFF ; rst_c1   ; clk          ; rtl_state.HALT ; 0.500        ; 3.716      ; 1.923      ;
+; 0.273  ; rtl_state.LED_ON  ; start_c2 ; clk          ; rtl_state.HALT ; 0.500        ; 4.459      ; 2.325      ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'button:master_reset_button|op'                                                                                                                                            ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                    ; Launch Clock                  ; Latch Clock                   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+; -5.368 ; rtl_state.HALT                    ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 9.261      ; 4.269      ;
+; -4.868 ; rtl_state.HALT                    ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; -0.500       ; 9.261      ; 4.269      ;
+; -4.460 ; rtl_state.HALT                    ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 9.119      ; 5.035      ;
+; -4.070 ; button:master_reset_button|op     ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 9.119      ; 5.425      ;
+; -3.960 ; rtl_state.HALT                    ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; -0.500       ; 9.119      ; 5.035      ;
+; -3.891 ; button:master_reset_button|op     ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 9.261      ; 5.746      ;
+; -3.570 ; button:master_reset_button|op     ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 9.119      ; 5.425      ;
+; -3.391 ; button:master_reset_button|op     ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 9.261      ; 5.746      ;
+; -2.386 ; rtl_state.LED_OFF                 ; rst_c1                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.809      ; 1.923      ;
+; -2.352 ; rand_gen:randgen|count[3]         ; rand_gen:randgen|rand[3]   ; clk                           ; button:master_reset_button|op ; 0.000        ; 4.324      ; 2.193      ;
+; -2.342 ; rand_gen:randgen|count[0]         ; rand_gen:randgen|rand[0]   ; clk                           ; button:master_reset_button|op ; 0.000        ; 4.324      ; 2.203      ;
+; -2.276 ; rand_gen:randgen|count[1]         ; rand_gen:randgen|rand[1]   ; clk                           ; button:master_reset_button|op ; 0.000        ; 4.324      ; 2.269      ;
+; -2.267 ; rand_gen:randgen|count[2]         ; rand_gen:randgen|rand[2]   ; clk                           ; button:master_reset_button|op ; 0.000        ; 4.324      ; 2.278      ;
+; -1.980 ; rtl_state.LED_ON                  ; rst_c2                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.813      ; 2.333      ;
+; -0.932 ; turn[2]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.775      ; 3.343      ;
+; -0.779 ; up_counter2:counter1|count_out[2] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.264      ; 3.985      ;
+; -0.761 ; turn[0]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.775      ; 3.514      ;
+; -0.744 ; turn[1]                           ; trn[2]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.775      ; 3.531      ;
+; -0.678 ; rtl_state.LED_OFF                 ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.264      ; 4.086      ;
+; -0.360 ; up_counter2:counter1|count_out[0] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.264      ; 4.404      ;
+; -0.329 ; up_counter2:counter1|count_out[2] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 4.471      ;
+; -0.302 ; turn[1]                           ; trn[1]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.776      ; 3.974      ;
+; -0.203 ; rtl_state.LED_ON                  ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 4.739      ;
+; -0.187 ; rtl_state.LED_ON                  ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 4.613      ;
+; -0.107 ; turn[0]                           ; trn[1]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.776      ; 4.169      ;
+; -0.075 ; turn[0]                           ; trn[0]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.780      ; 4.205      ;
+; 0.134  ; up_counter2:counter1|count_out[0] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 4.934      ;
+; 0.334  ; turn[1]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.707      ; 4.541      ;
+; 0.337  ; rtl_state.LED_ON                  ; trn[2]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.775      ; 4.612      ;
+; 0.473  ; up_counter2:counter1|count_out[3] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.264      ; 5.237      ;
+; 0.616  ; rtl_state.LED_ON                  ; trn[1]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.776      ; 4.892      ;
+; 0.645  ; rtl_state.LED_ON                  ; trn[0]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.780      ; 4.925      ;
+; 0.684  ; turn[3]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.707      ; 4.891      ;
+; 0.834  ; rtl_state.LED_ON                  ; trn[3]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.707      ; 5.041      ;
+; 0.877  ; turn[2]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.707      ; 5.084      ;
+; 0.899  ; button:react_button|op            ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 5.699      ;
+; 0.923  ; up_counter2:counter1|count_out[3] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 5.723      ;
+; 1.048  ; turn[0]                           ; trn[3]                     ; clk                           ; button:master_reset_button|op ; -0.500       ; 4.707      ; 5.255      ;
+; 1.155  ; up_counter2:counter1|count_out[1] ; next_rtl_state.LED_ON_311  ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.264      ; 5.919      ;
+; 1.649  ; up_counter2:counter1|count_out[1] ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 6.449      ;
+; 1.705  ; up_counter2:counter2|rtl_state    ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 6.505      ;
+; 1.831  ; up_counter2:counter2|count[3]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 6.631      ;
+; 1.929  ; rtl_state.LED_ON                  ; soft_reset                 ; clk                           ; button:master_reset_button|op ; -0.500       ; 0.994      ; 2.423      ;
+; 1.930  ; button:react_button|op            ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 6.872      ;
+; 2.197  ; trn[3]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 0.962      ; 3.159      ;
+; 2.278  ; up_counter2:counter2|count[2]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 7.078      ;
+; 2.488  ; rtl_state.LED_OFF                 ; soft_reset                 ; clk                           ; button:master_reset_button|op ; -0.500       ; 0.994      ; 2.982      ;
+; 2.566  ; trn[3]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.593      ; 3.159      ;
+; 2.661  ; up_counter2:counter2|count[0]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 7.461      ;
+; 2.674  ; trn[3]                            ; next_rtl_state.LED_ON_311  ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 0.926      ; 3.600      ;
+; 2.736  ; up_counter2:counter2|rtl_state    ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 7.678      ;
+; 2.862  ; up_counter2:counter2|count[3]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 7.804      ;
+; 3.025  ; up_counter2:counter2|count[1]     ; next_rtl_state.HALT_334    ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.300      ; 7.825      ;
+; 3.043  ; trn[3]                            ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.557      ; 3.600      ;
+; 3.309  ; up_counter2:counter2|count[2]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 8.251      ;
+; 3.616  ; trn[2]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 0.894      ; 4.510      ;
+; 3.692  ; up_counter2:counter2|count[0]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 8.634      ;
+; 3.985  ; trn[2]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.525      ; 4.510      ;
+; 4.056  ; up_counter2:counter2|count[1]     ; next_rtl_state.LED_OFF_288 ; clk                           ; button:master_reset_button|op ; -0.500       ; 5.442      ; 8.998      ;
+; 4.075  ; rand_gen:randgen|rand[3]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.940      ; 4.515      ;
+; 4.144  ; trn[0]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 0.889      ; 5.033      ;
+; 4.299  ; trn[1]                            ; next_rtl_state.HALT_334    ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 0.893      ; 5.192      ;
+; 4.513  ; trn[0]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.520      ; 5.033      ;
+; 4.525  ; rand_gen:randgen|rand[3]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.976      ; 5.001      ;
+; 4.552  ; trn[3]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 1.104      ; 5.656      ;
+; 4.585  ; rand_gen:randgen|rand[2]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.940      ; 5.025      ;
+; 4.647  ; trn[2]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 1.036      ; 5.683      ;
+; 4.668  ; trn[1]                            ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.524      ; 5.192      ;
+; 4.921  ; trn[3]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.735      ; 5.656      ;
+; 5.016  ; trn[2]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.667      ; 5.683      ;
+; 5.035  ; rand_gen:randgen|rand[2]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.976      ; 5.511      ;
+; 5.175  ; trn[0]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 1.031      ; 6.206      ;
+; 5.330  ; trn[1]                            ; next_rtl_state.LED_OFF_288 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; 1.035      ; 6.365      ;
+; 5.424  ; rand_gen:randgen|rand[0]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.940      ; 5.864      ;
+; 5.544  ; trn[0]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.662      ; 6.206      ;
+; 5.585  ; rand_gen:randgen|rand[1]          ; next_rtl_state.LED_ON_311  ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.940      ; 6.025      ;
+; 5.699  ; trn[1]                            ; next_rtl_state.LED_OFF_288 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; 0.666      ; 6.365      ;
+; 5.918  ; rand_gen:randgen|rand[0]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.976      ; 6.394      ;
+; 5.925  ; trn[3]                            ; soft_reset                 ; rtl_state.HALT                ; button:master_reset_button|op ; 0.000        ; -3.344     ; 2.581      ;
+; 6.079  ; rand_gen:randgen|rand[1]          ; next_rtl_state.HALT_334    ; button:master_reset_button|op ; button:master_reset_button|op ; -0.500       ; 0.976      ; 6.555      ;
+; 6.294  ; trn[3]                            ; soft_reset                 ; button:master_reset_button|op ; button:master_reset_button|op ; 0.000        ; -3.713     ; 2.581      ;
++--------+-----------------------------------+----------------------------+-------------------------------+-------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Hold: 'rtl_state.HALT'                                                                                         ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node  ; Launch Clock ; Latch Clock    ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+; -1.634 ; rtl_state.LED_ON  ; start_c2 ; clk          ; rtl_state.HALT ; -0.500       ; 4.459      ; 2.325      ;
+; -1.293 ; rtl_state.LED_OFF ; rst_c1   ; clk          ; rtl_state.HALT ; -0.500       ; 3.716      ; 1.923      ;
+; -0.887 ; rtl_state.LED_ON  ; rst_c2   ; clk          ; rtl_state.HALT ; -0.500       ; 3.720      ; 2.333      ;
+; -0.872 ; rtl_state.LED_ON  ; start_c1 ; clk          ; rtl_state.HALT ; -0.500       ; 3.838      ; 2.466      ;
+; -0.563 ; turn[2]           ; trn[2]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.406      ; 3.343      ;
+; -0.392 ; turn[0]           ; trn[2]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.406      ; 3.514      ;
+; -0.375 ; turn[1]           ; trn[2]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.406      ; 3.531      ;
+; 0.067  ; turn[1]           ; trn[1]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.407      ; 3.974      ;
+; 0.262  ; turn[0]           ; trn[1]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.407      ; 4.169      ;
+; 0.294  ; turn[0]           ; trn[0]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.411      ; 4.205      ;
+; 0.703  ; turn[1]           ; trn[3]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.338      ; 4.541      ;
+; 0.706  ; rtl_state.LED_ON  ; trn[2]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.406      ; 4.612      ;
+; 0.985  ; rtl_state.LED_ON  ; trn[1]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.407      ; 4.892      ;
+; 1.014  ; rtl_state.LED_ON  ; trn[0]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.411      ; 4.925      ;
+; 1.053  ; turn[3]           ; trn[3]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.338      ; 4.891      ;
+; 1.203  ; rtl_state.LED_ON  ; trn[3]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.338      ; 5.041      ;
+; 1.246  ; turn[2]           ; trn[3]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.338      ; 5.084      ;
+; 1.417  ; turn[0]           ; trn[3]   ; clk          ; rtl_state.HALT ; -0.500       ; 4.338      ; 5.255      ;
++--------+-------------------+----------+--------------+----------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                              ;
++--------+--------------------------------------+-----------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                           ; Launch Clock                  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+-----------------------------------+-------------------------------+-------------+--------------+------------+------------+
+; -1.600 ; button:master_reset_button|op        ; up_counter2:counter2|rtl_state    ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 2.816      ;
+; -1.100 ; button:master_reset_button|op        ; up_counter2:counter2|rtl_state    ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 2.816      ;
+; -0.571 ; button:master_reset_button|op        ; button:master_reset_button|op     ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 3.845      ;
+; -0.257 ; button:master_reset_button|op        ; up_counter2:counter1|rtl_state    ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.159      ;
+; -0.071 ; button:master_reset_button|op        ; button:master_reset_button|op     ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 3.845      ;
+; -0.066 ; button:master_reset_button|op        ; rtl_state.LED_ON                  ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.350      ;
+; 0.013  ; rtl_state.HALT                       ; turn[1]                           ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 4.429      ;
+; 0.017  ; rtl_state.HALT                       ; turn[2]                           ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 4.433      ;
+; 0.018  ; rtl_state.HALT                       ; turn[0]                           ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 4.434      ;
+; 0.020  ; rtl_state.HALT                       ; turn[3]                           ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 4.436      ;
+; 0.243  ; button:master_reset_button|op        ; up_counter2:counter1|rtl_state    ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.159      ;
+; 0.382  ; button:master_reset_button|op        ; turn[1]                           ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.798      ;
+; 0.386  ; button:master_reset_button|op        ; turn[2]                           ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.802      ;
+; 0.387  ; button:master_reset_button|op        ; turn[0]                           ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.803      ;
+; 0.389  ; button:master_reset_button|op        ; turn[3]                           ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 4.805      ;
+; 0.434  ; button:master_reset_button|op        ; rtl_state.LED_ON                  ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.350      ;
+; 0.508  ; rtl_state.HALT                       ; rtl_state.LED_ON                  ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 4.924      ;
+; 0.513  ; rtl_state.HALT                       ; turn[1]                           ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 4.429      ;
+; 0.517  ; rtl_state.HALT                       ; turn[2]                           ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 4.433      ;
+; 0.518  ; rtl_state.HALT                       ; turn[0]                           ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 4.434      ;
+; 0.520  ; rtl_state.HALT                       ; turn[3]                           ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 4.436      ;
+; 0.851  ; rtl_state.HALT                       ; rtl_state.LED_OFF                 ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 5.267      ;
+; 0.857  ; rtl_state.HALT                       ; rtl_state.HALT                    ; rtl_state.HALT                ; clk         ; 0.000        ; 3.819      ; 5.273      ;
+; 0.882  ; button:master_reset_button|op        ; turn[1]                           ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.798      ;
+; 0.886  ; button:master_reset_button|op        ; turn[2]                           ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.802      ;
+; 0.887  ; button:master_reset_button|op        ; turn[0]                           ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.803      ;
+; 0.889  ; button:master_reset_button|op        ; turn[3]                           ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 4.805      ;
+; 1.008  ; rtl_state.HALT                       ; rtl_state.LED_ON                  ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 4.924      ;
+; 1.351  ; rtl_state.HALT                       ; rtl_state.LED_OFF                 ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 5.267      ;
+; 1.357  ; rtl_state.HALT                       ; rtl_state.HALT                    ; rtl_state.HALT                ; clk         ; -0.500       ; 3.819      ; 5.273      ;
+; 1.644  ; button:master_reset_button|rtl_state ; button:master_reset_button|op     ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.865      ;
+; 1.661  ; up_counter2:counter1|count[2]        ; up_counter2:counter1|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.687  ; rand_gen:randgen|count[1]            ; rand_gen:randgen|count[1]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.908      ;
+; 1.689  ; rand_gen:randgen|count[1]            ; rand_gen:randgen|count[3]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.910      ;
+; 1.693  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.914      ;
+; 1.694  ; rand_gen:randgen|count[1]            ; rand_gen:randgen|count[2]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 1.915      ;
+; 1.928  ; rand_gen:randgen|count[2]            ; rand_gen:randgen|count[3]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.149      ;
+; 1.945  ; up_counter2:counter2|count[1]        ; up_counter2:counter2|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.166      ;
+; 1.959  ; button:master_reset_button|op        ; rtl_state.LED_OFF                 ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 6.375      ;
+; 1.979  ; up_counter2:counter1|count[0]        ; up_counter2:counter1|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.200      ;
+; 1.979  ; rand_gen:randgen|count[0]            ; rand_gen:randgen|count[0]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.200      ;
+; 1.982  ; up_counter2:counter1|count[0]        ; up_counter2:counter1|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.203      ;
+; 1.984  ; rand_gen:randgen|count[0]            ; rand_gen:randgen|count[2]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.205      ;
+; 1.985  ; rand_gen:randgen|count[0]            ; rand_gen:randgen|count[1]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.206      ;
+; 2.126  ; rand_gen:randgen|count[2]            ; rand_gen:randgen|count[2]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.169  ; up_counter2:counter1|count[1]        ; up_counter2:counter1|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.390      ;
+; 2.181  ; button:master_reset_button|op        ; rtl_state.HALT                    ; button:master_reset_button|op ; clk         ; 0.000        ; 3.819      ; 6.597      ;
+; 2.248  ; button:react_button|op               ; button:react_button|op            ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.469      ;
+; 2.264  ; turn[0]                              ; turn[0]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.485      ;
+; 2.278  ; rand_gen:randgen|count[3]            ; rand_gen:randgen|count[3]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.499      ;
+; 2.303  ; up_counter2:counter2|count[2]        ; up_counter2:counter2|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.524      ;
+; 2.459  ; button:master_reset_button|op        ; rtl_state.LED_OFF                 ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 6.375      ;
+; 2.462  ; up_counter2:counter2|rtl_state       ; up_counter2:counter2|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.683      ;
+; 2.470  ; up_counter2:counter2|rtl_state       ; up_counter2:counter2|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.691      ;
+; 2.479  ; up_counter2:counter1|count[0]        ; up_counter2:counter1|count_out[0] ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.700      ;
+; 2.507  ; rand_gen:randgen|count[0]            ; rand_gen:randgen|count[3]         ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.728      ;
+; 2.543  ; up_counter2:counter2|count[0]        ; up_counter2:counter2|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.764      ;
+; 2.550  ; up_counter2:counter2|count[0]        ; up_counter2:counter2|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.771      ;
+; 2.551  ; up_counter2:counter1|count[1]        ; up_counter2:counter1|count_out[1] ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.772      ;
+; 2.629  ; up_counter2:counter2|count[3]        ; up_counter2:counter2|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.850      ;
+; 2.681  ; button:master_reset_button|op        ; rtl_state.HALT                    ; button:master_reset_button|op ; clk         ; -0.500       ; 3.819      ; 6.597      ;
+; 2.742  ; up_counter2:counter1|rtl_state       ; up_counter2:counter1|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.963      ;
+; 2.744  ; up_counter2:counter1|rtl_state       ; up_counter2:counter1|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.965      ;
+; 2.749  ; up_counter2:counter1|rtl_state       ; up_counter2:counter1|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.970      ;
+; 2.752  ; up_counter2:counter1|rtl_state       ; up_counter2:counter1|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.973      ;
+; 2.765  ; button:react_button|rtl_state        ; button:react_button|op            ; clk                           ; clk         ; 0.000        ; 0.000      ; 2.986      ;
+; 2.791  ; up_counter2:counter2|rtl_state       ; up_counter2:counter2|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.793  ; up_counter2:counter2|rtl_state       ; up_counter2:counter2|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.014      ;
+; 3.001  ; rtl_state.LED_ON                     ; rtl_state.LED_ON                  ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.222      ;
+; 3.040  ; up_counter2:counter2|count[2]        ; up_counter2:counter2|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.261      ;
+; 3.122  ; up_counter2:counter1|count[1]        ; up_counter2:counter1|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.343      ;
+; 3.130  ; up_counter2:counter1|count[1]        ; up_counter2:counter1|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.351      ;
+; 3.193  ; turn[1]                              ; turn[3]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.414      ;
+; 3.218  ; up_counter2:counter1|count[2]        ; up_counter2:counter1|count_out[2] ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.439      ;
+; 3.244  ; rtl_state.LED_ON                     ; rtl_state.HALT                    ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.465      ;
+; 3.312  ; rtl_state.LED_ON                     ; rtl_state.LED_OFF                 ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.533      ;
+; 3.423  ; up_counter2:counter2|count[0]        ; up_counter2:counter2|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.644      ;
+; 3.428  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|count_out[3] ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.649      ;
+; 3.434  ; up_counter2:counter2|count[1]        ; up_counter2:counter2|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.655      ;
+; 3.458  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.679      ;
+; 3.493  ; up_counter2:counter1|count[0]        ; up_counter2:counter1|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.714      ;
+; 3.507  ; up_counter2:counter1|count[0]        ; up_counter2:counter1|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.728      ;
+; 3.543  ; turn[3]                              ; turn[3]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.764      ;
+; 3.610  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.831      ;
+; 3.612  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.833      ;
+; 3.736  ; turn[2]                              ; turn[3]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.957      ;
+; 3.765  ; up_counter2:counter1|count[2]        ; up_counter2:counter1|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 3.986      ;
+; 3.787  ; up_counter2:counter2|count[1]        ; up_counter2:counter2|count[3]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.008      ;
+; 3.864  ; up_counter2:counter1|count[3]        ; up_counter2:counter1|rtl_state    ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.085      ;
+; 3.907  ; turn[0]                              ; turn[3]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.128      ;
+; 3.945  ; turn[0]                              ; turn[1]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.166      ;
+; 4.008  ; up_counter2:counter2|count[0]        ; up_counter2:counter2|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.229      ;
+; 4.032  ; turn[0]                              ; turn[2]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.253      ;
+; 4.293  ; turn[1]                              ; turn[1]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.514      ;
+; 4.367  ; turn[1]                              ; turn[2]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.588      ;
+; 4.382  ; up_counter2:counter1|count[1]        ; up_counter2:counter1|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.603      ;
+; 4.450  ; up_counter2:counter2|count[3]        ; up_counter2:counter2|count[1]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.671      ;
+; 4.451  ; up_counter2:counter2|count[3]        ; up_counter2:counter2|count[2]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.672      ;
+; 4.453  ; up_counter2:counter2|count[3]        ; up_counter2:counter2|count[0]     ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.674      ;
+; 4.461  ; turn[2]                              ; turn[2]                           ; clk                           ; clk         ; 0.000        ; 0.000      ; 4.682      ;
++--------+--------------------------------------+-----------------------------------+-------------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                           ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; button:master_reset_button|op ; button:master_reset_button|op ; 0        ; 0        ; 10       ; 13       ;
+; clk                           ; button:master_reset_button|op ; 4        ; 0        ; 42       ; 0        ;
+; rtl_state.HALT                ; button:master_reset_button|op ; 0        ; 0        ; 3        ; 14       ;
+; button:master_reset_button|op ; clk                           ; 42       ; 82       ; 0        ; 0        ;
+; clk                           ; clk                           ; 218      ; 0        ; 0        ; 0        ;
+; rtl_state.HALT                ; clk                           ; 9        ; 76       ; 0        ; 0        ;
+; clk                           ; rtl_state.HALT                ; 0        ; 0        ; 18       ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                            ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; button:master_reset_button|op ; button:master_reset_button|op ; 0        ; 0        ; 10       ; 13       ;
+; clk                           ; button:master_reset_button|op ; 4        ; 0        ; 42       ; 0        ;
+; rtl_state.HALT                ; button:master_reset_button|op ; 0        ; 0        ; 3        ; 14       ;
+; button:master_reset_button|op ; clk                           ; 42       ; 82       ; 0        ; 0        ;
+; clk                           ; clk                           ; 218      ; 0        ; 0        ; 0        ;
+; rtl_state.HALT                ; clk                           ; 9        ; 76       ; 0        ; 0        ;
+; clk                           ; rtl_state.HALT                ; 0        ; 0        ; 18       ; 0        ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------+
+; Clock Status Summary                                                               ;
++-------------------------------+-------------------------------+------+-------------+
+; Target                        ; Clock                         ; Type ; Status      ;
++-------------------------------+-------------------------------+------+-------------+
+; button:master_reset_button|op ; button:master_reset_button|op ; Base ; Constrained ;
+; clk                           ; clk                           ; Base ; Constrained ;
+; rtl_state.HALT                ; rtl_state.HALT                ; Base ; Constrained ;
++-------------------------------+-------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; mreset     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; react      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; mreset     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; react      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; led         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sun Apr 15 01:46:03 2018
+Info: Command: quartus_sta reaction_game -c reaction_game
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'reaction_game.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name button:master_reset_button|op button:master_reset_button|op
+    Info (332105): create_clock -period 1.000 -name rtl_state.HALT rtl_state.HALT
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.196
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -12.196            -158.212 clk 
+    Info (332119):    -7.270             -32.958 button:master_reset_button|op 
+    Info (332119):    -2.259              -7.351 rtl_state.HALT 
+Info (332146): Worst-case hold slack is -5.368
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.368             -25.519 button:master_reset_button|op 
+    Info (332119):    -1.634              -5.249 rtl_state.HALT 
+    Info (332119):    -1.600              -2.494 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 button:master_reset_button|op 
+    Info (332119):     0.500               0.000 rtl_state.HALT 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1012 megabytes
+    Info: Processing ended: Sun Apr 15 01:46:04 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

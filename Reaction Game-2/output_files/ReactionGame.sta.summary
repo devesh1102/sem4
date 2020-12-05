@@ -1,0 +1,137 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'DFlipFlop1:dff10|Q'
+Slack : -1.194
+TNS   : -1.194
+
+Type  : Setup 'DFlipFlop1:dff3|Q'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff1|Q'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff5|Q'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff7|Q'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff2|Q'
+Slack : 0.799
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff9|Q'
+Slack : 0.836
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff8|Q'
+Slack : 0.846
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff6|Q'
+Slack : 1.146
+TNS   : 0.000
+
+Type  : Setup 'DFlipFlop1:dff4|Q'
+Slack : 1.340
+TNS   : 0.000
+
+Type  : Setup 'clk'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Hold 'clk'
+Slack : -1.720
+TNS   : -1.720
+
+Type  : Hold 'DFlipFlop1:dff4|Q'
+Slack : -1.394
+TNS   : -1.394
+
+Type  : Hold 'DFlipFlop1:dff6|Q'
+Slack : -1.200
+TNS   : -1.200
+
+Type  : Hold 'DFlipFlop1:dff8|Q'
+Slack : -0.900
+TNS   : -0.900
+
+Type  : Hold 'DFlipFlop1:dff9|Q'
+Slack : -0.890
+TNS   : -0.890
+
+Type  : Hold 'DFlipFlop1:dff2|Q'
+Slack : -0.853
+TNS   : -0.853
+
+Type  : Hold 'DFlipFlop1:dff7|Q'
+Slack : -0.524
+TNS   : -0.524
+
+Type  : Hold 'DFlipFlop1:dff5|Q'
+Slack : -0.523
+TNS   : -0.523
+
+Type  : Hold 'DFlipFlop1:dff1|Q'
+Slack : -0.521
+TNS   : -0.521
+
+Type  : Hold 'DFlipFlop1:dff3|Q'
+Slack : -0.511
+TNS   : -0.511
+
+Type  : Hold 'DFlipFlop1:dff10|Q'
+Slack : 1.640
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff10|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff1|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff2|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff3|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff4|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff5|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff6|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff7|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff8|Q'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'DFlipFlop1:dff9|Q'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

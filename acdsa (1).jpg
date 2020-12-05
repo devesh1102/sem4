@@ -1,0 +1,85 @@
+import math
+import cmath
+import matplotlib.pyplot as plt
+r0 = math.pow(10,5) + 0j
+Rd = 20*math.pow(10,3) + 0j
+Rs = 5.0*math.pow(10,3) + 0j
+Rl = 20.0*math.pow(10,3) + 0j
+R1 = 10*math.pow(10,3) + 0j
+R2 = 1.0*math.pow(10,4) + 0j
+Ri = 100.0 + 0j
+Cgs = 1.0*math.pow(10,-11) + 0j
+Cgd = 1.0*math.pow(10,-13) + 0j
+Gm = 2.0*math.pow(10,-3) + 0j
+Cb = 100*math.pow(10,-12) 
+Cd = 1*math.pow(10,-10)  
+Cs = 1*math.pow(10,-9)
+omega = 2*3.14*1 +0j 
+n=0
+A = []
+B = []
+
+PHASE1 =[]
+PHASE2 = []
+OMEGA = []
+
+while(n<15):
+	print n
+	p = (omega*Cgd)*(0+1j) - Gm
+	q = (omega*Cgd)*(0+1j) + 1/r0 + 1/Rd + 1/(Rl + (0-1j)/(omega*Cd))
+	r = (Gm + 1/r0)
+	s = (1/Rs + (omega*Cs)*(0+1j) + 1/r0 + (omega*Cgs)*(0+1j) + Gm)
+	t = (Gm + (omega*Cgs)*(0+1j))
+	u = (1/r0)
+	KDG = (p*s + r*t)/(q*s - r*u)
+	KSG = (p*u + q*t)/( q*s - r*u)
+	print ("KDG = ", KDG)
+	print ('KsG = ', KSG)
+
+	KGD1 = -3.55
+	KGS1 = 0.8888
+	zin = 2/R1 + omega*(Cgd*(1-KGD1) + Cgs*(1-KGS1))*(0+1j)
+	zin = 1/zin
+	zout1 = (omega*Cgd)*(0+1j)*(1-1/KGD1) + 1/Rd + 1/(Rl + (0-1j)/(omega*Cd))
+	zout1 = 1/zout1
+	zout2 = 1/Rs +(omega*Cs)*(0+1j) + omega*Cgs*(0+1j)*(1-1/KGS1)
+	zout2 = 1/zout2
+	a = 1/zout1 + 1/r0 + (1/r0 + Gm)*zout2/zout1
+	b = zin/(zin + Ri + (0-1j)/(omega*Cb))
+	gain1 = -b*Gm/a*(Rl/(Rl + (0-1j)/(omega*Cd)))
+	absc = cmath.phase(gain1)
+	a1 = abs(gain1)
+	a1 = 20*math.log10(a1)
+	A.append(a1)
+	PHASE1.append(absc)
+
+	
+	zin = 2/R1 + omega*(Cgd*(1-KDG) + Cgs*(1-KSG))*(0+1j)
+	zin = 1/zin
+	zout1 = (omega*Cgd)*(0+1j)*(1-1/KDG) + 1/Rd + 1/(Rl + (0-1j)/(omega*Cd))
+	zout1 = 1/zout1
+	zout2 = 1/Rs + (omega*Cs)*(0+1j) + omega*Cgs*(0+1j)*(1-1/KSG)
+	zout2 = 1/zout2
+	a = 1/zout1 + 1/r0 + (1/r0 + Gm)*zout2/zout1
+	b = zin/(zin + Ri + (0-1j)/(omega*Cb))
+	gain2 = -b*Gm/a*(Rl/(Rl + (0-1j)/(omega*Cd)))
+	absc = cmath.phase(gain2)
+	PHASE2.append(absc)
+	b1 = abs(gain2) 
+	
+	b1 = 20*math.log10(b1)
+	asd = abs(omega)
+	c1 = math.log10(asd)
+
+	B.append(b1)
+	OMEGA.append(c1)
+	n = n+1
+	omega = omega*10
+
+
+plt.plot(OMEGA, PHASE1, 'r')
+plt.plot(OMEGA, PHASE2, 'b')
+plt.xlabel('log(w)')
+plt.ylabel('PHASE')
+plt.title('Question 4, (Cb = 100pF, Cd = 100pF, Cs = 1nF )')
+plt.show()

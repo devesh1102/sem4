@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Apr 15 00:29:24 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : button
+Top-level Entity Name : button
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 2 / 1,270 ( < 1 % )
+Total pins : 3 / 114 ( 3 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

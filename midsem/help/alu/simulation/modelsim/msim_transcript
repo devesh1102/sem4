@@ -1,0 +1,49 @@
+# ERROR: No extended dataflow license exists
+# do alu_run_msim_gate_vhdl.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying /opt/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {alu.vho}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity TopLevel
+# -- Compiling architecture structure of TopLevel
+# 
+# vcom -93 -work work {/home/student/16d070044/final/Testbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Testbench
+# -- Compiling architecture Behave of Testbench
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /dut=alu_vhd.sdo -L maxv -L gate_work -L work -voptargs="+acc"  Testbench
+# vsim +transport_int_delays +transport_path_delays -L maxv -L gate_work -L work -voptargs=\"+acc\" -sdftyp /dut=alu_vhd.sdo -t 1ps Testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testbench(behave)
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# ** Warning: (vsim-3473) Component instance "dut_instance : DUT" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: /home/student/16d070044/final/Testbench.vhd
+# Loading instances from alu_vhd.sdo
+# ** Error: (vsim-SDF-3250) alu_vhd.sdo(0): Failed to find INSTANCE '/dut'.
+# ** Error: (vsim-SDF-3894) : Errors occured in reading and resolving instances from compiled SDF file(s).
+# ** Error: (vsim-SDF-3250) alu_vhd.sdo(0): Failed to find INSTANCE '/dut'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./alu_run_msim_gate_vhdl.do PAUSED at line 12

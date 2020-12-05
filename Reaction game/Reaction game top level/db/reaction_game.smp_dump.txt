@@ -1,0 +1,6 @@
+
+State Machine - |reaction_game|rtl_state
+Name rtl_state.LED_OFF rtl_state.LED_ON rtl_state.HALT 
+rtl_state.HALT 0 0 0 
+rtl_state.LED_ON 0 1 1 
+rtl_state.LED_OFF 1 0 1 

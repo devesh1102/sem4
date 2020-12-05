@@ -1,0 +1,12 @@
+vendor_name = ModelSim
+source_file = 1, /home/parth/Digital_lab_projects/Reaction game/button/button.vhd
+source_file = 1, /home/parth/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /home/parth/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /home/parth/altera_lite/16.0/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /home/parth/altera_lite/16.0/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, /home/parth/Digital_lab_projects/Reaction game/button/db/button.cbx.xml
+design_name = button
+instance = comp, \clk~I\, clk, button, 1
+instance = comp, \click~I\, click, button, 1
+instance = comp, \op~reg0\, op~reg0, button, 1
+instance = comp, \op~I\, op, button, 1
